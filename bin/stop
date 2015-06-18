@@ -1,0 +1,12 @@
+mkdir -p /home/larrotta69/webapps/summa_node/run
+pid=$(/sbin/pidof /home/larrotta69/webapps/summa_node/bin/node)
+if echo "$pid" | grep -q " "; then
+    pid=""
+fi
+if [ -n "$pid" ]; then
+  user=$(ps -p $pid -o user | tail -n 1)
+  if [ $user = "larrotta69" ]; then
+    kill "$pid"
+    rm -f /home/larrotta69/webapps/summa_node/run/node.pid
+  fi
+fi
