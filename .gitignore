@@ -1,0 +1,4 @@
+# express-generator, express, forever, npm
+# node module for task automator
+node_modules/
+lib/
