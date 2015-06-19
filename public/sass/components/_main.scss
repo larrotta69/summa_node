@@ -1,2 +1,78 @@
-body{
+.header-nav{
+	background: $gray_summa;
+	ul{
+		li{
+			a{
+				text-transform: uppercase;
+				font-family: bitter;
+				font-size: 1.2rem;
+				font-weight: bold;
+				&.active{
+					color: $orange_summa;
+				}
+			}
+		}
+	}
 }
+
+.slider {
+	height: 90vh;
+	.slides{
+		height: 90vh;
+	}
+	h5{
+		font-size: 2.1rem;
+		line-height: 1.2;
+	}
+	h3{
+		color: $orange_summa;
+		font-size: 4rem;
+		font-family: bitter;
+
+	}
+}
+
+.bold{
+	font-weight: bold;
+}
+footer.page-footer{
+	margin: 0;
+	background-color: $gray_summa;
+	padding: 0;
+	justify-content: center;
+  	padding: 10px 0;
+  	.footer-copyright{
+  		position: absolute;
+  		left: 20px;	
+  	}
+	.social-foot{
+		.icon-foot{
+			float: left;
+			float: left;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			border-radius: 50%;
+			margin: 0 10px;
+			padding: 8px 0;
+			font-size: 25px;
+			line-height: 1;
+			color: white;
+			a{
+				color: white;
+			}
+			&.facebook{
+				background: #3c5999;
+			}
+			&.twitter{
+				background: #00adef;
+			}
+			&.mail{
+				background: #999999;
+			}
+		}
+	}
+}
+
+
+

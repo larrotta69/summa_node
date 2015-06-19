@@ -29,6 +29,7 @@ gulp.task('template', function(){
 });
 
 gulp.task('todo', function(){
+  	gulp.watch('./public/sass/components/**/*.scss', ['styles']);
   	gulp.watch('./public/sass/components/*.scss', ['styles']);
 });
 

@@ -1,13 +1,25 @@
-nav.header-nav
-	.nav-wrapper
-		a(class="brand-logo right", href="#")
-			img(src="/img/logo_dark.png", class="logo")
-		ul
-			li
-				a(href="/", class="active") home
-			li
-				a(href="equipo.html") equipo
-			li
-				a(href="servicios.html") servicios
-			li
-				a(href="contacto.html") contacto
+header
+	nav.header-nav
+		.nav-wrapper
+			a(class="brand-logo right center-align", href="#")
+				img(src="/img/logo_dark.png", class="logo")
+			a(href="#", data-activates="mobile-demo", class="button-collapse")
+				i.mdi-navigation-menu
+			ul.hide-on-med-and-down
+				li
+					a(href="/", class="active") home
+				li
+					a(href="equipo.html") equipo
+				li
+					a(href="servicios.html") servicios
+				li
+					a(href="contacto.html") contacto
+			ul.side-nav#mobile-demo
+				li
+					a(href="/", class="active") home
+				li
+					a(href="equipo.html") equipo
+				li
+					a(href="servicios.html") servicios
+				li
+					a(href="contacto.html") contacto        

@@ -1,3 +1,20 @@
 @import 'components/colors',
-		'components/main',
-		'components/header';
+		'components/main';
+
+@media #{$small-and-down} {
+    
+}
+@media #{$medium-and-down} {
+	@import 'components/medium/header';
+
+}
+@media #{$medium-and-up} {
+
+}
+
+@media #{$large-and-up} {
+	@import 'components/large/header';
+}
+
+
+

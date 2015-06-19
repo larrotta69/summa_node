@@ -2,11 +2,13 @@ doctype html
 html
 	head
 		title= title
-		link(rel='stylesheet', href='/stylesheets/main.css')
 		link(rel='stylesheet', href='/stylesheets/materialize.min.css', media='screen,projection')
+		link(rel='stylesheet', href='/stylesheets/main.css')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
 	body
 		include header
 		block content
-		script(type='text/javascript', scr='https://code.jquery.com/jquery-2.1.1.min.js')
-		script(type='text/javascript', scr='/js/materialize.min.js')
+		include footer
+		script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+		script(type='text/javascript', src='/js/materialize.min.js')
+		script(type='text/javascript', src='/js/main.js')
