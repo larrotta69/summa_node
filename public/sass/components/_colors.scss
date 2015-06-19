@@ -1,5 +1,6 @@
 $gray_summa: #38464f;
 $orange_summa: #ba5330;
+$light_gray: #f3f3f3;
 
 // Media Query Ranges
 $small-screen-up: 601px !default;
@@ -19,7 +20,3 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
     font-family: bitter;
     src: url('../font/bitter/bitter-regular.ttf');
 }
-
-
-
-

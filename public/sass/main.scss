@@ -5,7 +5,8 @@
     
 }
 @media #{$medium-and-down} {
-	@import 'components/medium/header';
+	@import 'components/medium/header',
+			'components/medium/services';
 
 }
 @media #{$medium-and-up} {
@@ -14,7 +15,8 @@
 
 @media #{$large-and-up} {
 	@import 'components/large/header',
-			'components/large/main';
+			'components/large/main',
+			'components/medium/services';
 }
 
 
