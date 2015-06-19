@@ -1,8 +1,4 @@
 .slider{
-	height: 90vh;
-	.slides{
-		height: 90vh;
-	}
 	h5{
 		font-size: 2.1rem;
 	}
@@ -11,8 +7,9 @@
 	}
 }
 
+
 footer.page-footer{
+	justify-content: center;
 	.footer-copyright{
-		display: block;
 	}
 }

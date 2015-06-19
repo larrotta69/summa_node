@@ -16,9 +16,9 @@
 }
 
 .slider {
-	height: 80vh;
+	height: calc(100vh - 116px);
 	.slides{
-		height: 80vh;
+		height: calc(100vh - 116px);
 	}
 	h5{
 		font-size: 1.5rem;
@@ -39,12 +39,13 @@ footer.page-footer{
 	margin: 0;
 	background-color: $gray_summa;
 	padding: 0;
-	justify-content: center;
+	justify-content: flex-end;
+	-webkit-justify-content: flex-end;
+	-ms-justify-content: flex-end;
   	padding: 10px 0;
   	.footer-copyright{
   		position: absolute;
   		left: 20px;	
-  		display: none;
   	}
 	.social-foot{
 		.icon-foot{
