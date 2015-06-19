@@ -13,7 +13,8 @@
 }
 
 @media #{$large-and-up} {
-	@import 'components/large/header';
+	@import 'components/large/header',
+			'components/large/main';
 }
 
 

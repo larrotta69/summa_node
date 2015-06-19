@@ -17,19 +17,20 @@
 
 /* line 18, c:/summa/summa_node/public/sass/components/_main.scss */
 .slider {
-  height: 90vh; }
+  height: 80vh; }
   /* line 20, c:/summa/summa_node/public/sass/components/_main.scss */
   .slider .slides {
-    height: 90vh; }
+    height: 80vh; }
   /* line 23, c:/summa/summa_node/public/sass/components/_main.scss */
   .slider h5 {
-    font-size: 2.1rem;
+    font-size: 1.5rem;
     line-height: 1.2; }
   /* line 27, c:/summa/summa_node/public/sass/components/_main.scss */
   .slider h3 {
     color: #ba5330;
-    font-size: 4rem;
-    font-family: bitter; }
+    font-size: 3rem;
+    font-family: bitter;
+    line-height: 1.2; }
 
 /* line 35, c:/summa/summa_node/public/sass/components/_main.scss */
 .bold {
@@ -45,8 +46,9 @@ footer.page-footer {
   /* line 44, c:/summa/summa_node/public/sass/components/_main.scss */
   footer.page-footer .footer-copyright {
     position: absolute;
-    left: 20px; }
-  /* line 49, c:/summa/summa_node/public/sass/components/_main.scss */
+    left: 20px;
+    display: none; }
+  /* line 50, c:/summa/summa_node/public/sass/components/_main.scss */
   footer.page-footer .social-foot .icon-foot {
     float: left;
     float: left;
@@ -59,16 +61,16 @@ footer.page-footer {
     font-size: 25px;
     line-height: 1;
     color: white; }
-    /* line 61, c:/summa/summa_node/public/sass/components/_main.scss */
+    /* line 62, c:/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot a {
       color: white; }
-    /* line 64, c:/summa/summa_node/public/sass/components/_main.scss */
+    /* line 65, c:/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.facebook {
       background: #3c5999; }
-    /* line 67, c:/summa/summa_node/public/sass/components/_main.scss */
+    /* line 68, c:/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.twitter {
       background: #00adef; }
-    /* line 70, c:/summa/summa_node/public/sass/components/_main.scss */
+    /* line 71, c:/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.mail {
       background: #999999; }
 
@@ -92,4 +94,19 @@ footer.page-footer {
     /* line 7, c:/summa/summa_node/public/sass/components/large/_header.scss */
     .header-nav li {
       height: 100px;
-      padding: 20px 0; } }
+      padding: 20px 0; }
+  /* line 1, c:/summa/summa_node/public/sass/components/large/_main.scss */
+  .slider {
+    height: 90vh; }
+    /* line 3, c:/summa/summa_node/public/sass/components/large/_main.scss */
+    .slider .slides {
+      height: 90vh; }
+    /* line 6, c:/summa/summa_node/public/sass/components/large/_main.scss */
+    .slider h5 {
+      font-size: 2.1rem; }
+    /* line 9, c:/summa/summa_node/public/sass/components/large/_main.scss */
+    .slider h3 {
+      font-size: 4rem; }
+  /* line 15, c:/summa/summa_node/public/sass/components/large/_main.scss */
+  footer.page-footer .footer-copyright {
+    display: block; } }

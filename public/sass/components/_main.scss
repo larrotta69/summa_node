@@ -16,22 +16,22 @@
 }
 
 .slider {
-	height: 90vh;
+	height: 80vh;
 	.slides{
-		height: 90vh;
+		height: 80vh;
 	}
 	h5{
-		font-size: 2.1rem;
+		font-size: 1.5rem;
 		line-height: 1.2;
 	}
 	h3{
 		color: $orange_summa;
-		font-size: 4rem;
-		font-family: bitter;
+		font-size: 3rem;
 
+		font-family: bitter;
+		line-height: 1.2;
 	}
 }
-
 .bold{
 	font-weight: bold;
 }
@@ -44,6 +44,7 @@ footer.page-footer{
   	.footer-copyright{
   		position: absolute;
   		left: 20px;	
+  		display: none;
   	}
 	.social-foot{
 		.icon-foot{
