@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var members = require('./routes/members');
 /*mine*/
 var services = require('./routes/services');
 /*mine*/
@@ -15,6 +16,7 @@ var app = express();
 
 /*mine*/
 var db = require('./model/db');
+var member = require('./model/members');
 /*mine*/
 
 // view engine setup
@@ -31,6 +33,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+/*mine*/
+app.use('/members', members);
+/*mine*/
 
 /*mine*/
 app.use('/servicios', services);

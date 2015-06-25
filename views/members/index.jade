@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    ul
+        - each member, i in members
+            li
+                = member
+                = member.name
+                = member.title
+                = member.picture
+                = member.desc
+                = member.id
+                
+                p 
+                    a(href='/members/#{member._id}/edit') Edit
+                p
+                    a(href='/members/#{member._id}') Show
