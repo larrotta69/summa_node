@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddMember(name="addmember",method="post",action="/equipo")
+        p Name: 
+            input#inputName(type="text", placeholder="ex. John Smith", name="name")
+        p title:
+            input#inputTitle(type="text", placeholder="ex. CEO", name="title")
+        p picture: 
+            input#inputPicture(type="text", name="picture")
+        p desc: 
+            input#inputDesc(type="text", name="desc")
+        p
+            button#btnSubmit(type="submit") submit

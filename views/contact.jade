@@ -1,0 +1,81 @@
+extends layout
+
+block content
+	section.container
+		article.row.contact_module
+			.col.s6
+				ul.tabs
+					li.tab.col.s3
+						a(href="#bogota") Bogotá
+					li.tab.col.s3
+						a(href="#barcelona") Barcelona
+			.row.contact_forms
+				div#bogota.s12.col.contact_form
+					form
+						.row
+							.input-field.col.s6
+								i.material-icons.prefix account_circle
+								input#icon_prefix.validate(type="text")
+								label(for="icon_prefix") Name
+							.input-field.col.s6
+								i.material-icons.prefix phone
+								input#icon_telephone.validate(type="text")
+								label(for="icon_telephone") Telephone
+							.input-field.col.s12
+								i.material-icons.prefix mode_edit
+								textarea#icon_message.materialize-textarea
+								label(for="icon_message") Message
+							.col.s12.center-align
+								button.btn.waves-effect.waves-light(type="submit") Enviar
+									i.material-icons send
+					.row.mapa
+						.s12.col
+							#map-canvas-bogota.map-canvas
+					.row.loc
+						.m6.col.left-align
+							p Localización de la oficina
+						.m6.col.right-align
+							p
+								strong Tel: 
+								span (916) 256 21 55
+						.m6.col.left-align
+							p Dirección de la oficina
+						.m6.col.right-align
+							p
+								strong Fax: 
+								span (916) 256 21 55
+
+				div#barcelona.s12.col.contact_form
+					form
+						.row
+							.input-field.col.s6
+								i.material-icons.prefix account_circle
+								input#icon_prefix.validate(type="text")
+								label(for="icon_prefix") Name
+							.input-field.col.s6
+								i.material-icons.prefix phone
+								input#icon_telephone.validate(type="text")
+								label(for="icon_telephone") Telephone
+							.input-field.col.s12
+								i.material-icons.prefix mode_edit
+								textarea#icon_message.materialize-textarea
+								label(for="icon_message") Message
+							.col.s12.center-align
+								button.btn.waves-effect.waves-light(type="submit") Enviar
+									i.material-icons send
+					.row.mapa
+						.s12.col
+							#map-canvas-barcelona.map-canvas
+					.row.loc
+						.m6.col.left-align
+							p Localización de la oficina
+						.m6.col.right-align
+							p
+								strong Tel: 
+								span (916) 265 12 65
+						.m6.col.left-align
+							p Dirección de la oficina
+						.m6.col.right-align
+							p
+								strong Fax: 
+								span (916) 256 12 67

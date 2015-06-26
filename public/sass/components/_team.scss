@@ -1,0 +1,42 @@
+.team_module{
+	margin-top: 3rem;
+	.member{
+		border-bottom: 1px solid $middle_gray;
+		min-height: 200px;
+		margin-bottom: 2rem;
+	}
+	.member_name{
+		color: black;	
+		margin-bottom: 0;
+		text-transform: uppercase;
+		font-weight: bold;
+	}	
+	.member_title{
+		color: $middle_gray;
+		margin-top: 0;
+	}
+	.member_image{
+		img{
+			width: 100%;
+		}
+	}
+	.modal_team{
+		.modal-content{
+			
+		}
+		.img_modal_team{
+			width: 100%;
+		}
+	}
+}
+
+
+.contact_module{
+	margin-top: 3rem;
+	.contact_forms{
+
+	}
+	.contact_form{
+		margin-top: 30px;
+	}
+}
