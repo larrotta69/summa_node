@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddService(name="addservice",method="post",action="/servicios")
+        p title: 
+            input#inputTitle(type="text", placeholder="ex. Comercio Internacional", name="title")
+        p content:
+            input#inputContent(type="text", placeholder="ex. Prestamos apoyo", name="content")
+        p serviceList: 
+            input#inputServiceList(type="text", name="serviceList")
+        p
+            button#btnSubmit(type="submit") submit

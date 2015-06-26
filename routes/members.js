@@ -60,9 +60,9 @@ router.route('/')
                       //HTML response will set the location and redirect back to the home page. You could also create a 'success' page if that's your thing
                     html: function(){
                         // If it worked, set the header so the address bar doesn't still say /adduser
-                        res.location("members");
+                        res.location("equipo");
                         // And forward to success page
-                        res.redirect("/members");
+                        res.redirect("/equipo");
                     },
                     //JSON response will show the newly created blob
                     json: function(){

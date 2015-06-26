@@ -130,7 +130,50 @@ footer.page-footer{
 		}
 	}
 }
-
-
 /*@end services*/
 
+.tabs{
+	.tab{
+		a{
+			color: black;
+			&:hover{
+				color: $orange_summa;	
+			}
+		}
+	}
+	.indicator{
+		background-color: $orange_summa;
+	}
+} 
+.btn{
+	padding: 12px 2rem;
+	line-height: 1;
+	vertical-align: top;
+	background-color: $orange_summa;
+	.material-icons{
+		margin-left: 20px;
+		position: relative;
+		top: -3px;
+	}
+	&:hover{
+		background-color: $orange_dark_summa;
+	}
+}
+
+/*map*/
+.mapa{
+	padding-bottom: 30px;
+	border-bottom: 1px solid $middle_gray;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+.map-canvas {
+	width: 700px;
+	height: 300px;
+	margin: 0 auto;
+}
+.loc{
+	p{
+		margin-top: 0;
+	}
+}

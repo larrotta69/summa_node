@@ -3,14 +3,14 @@ extends ../layout
 block content
     h1.
         #{title}
-    form#formAddBlob(name="addmember",method="post",action="/members")
+    form#formAddMember(name="addmember",method="post",action="/equipo")
         p Name: 
-            input#inputName(type="text", placeholder="ex. John Smith", name="title")
+            input#inputName(type="text", placeholder="ex. John Smith", name="name")
         p title:
-            input#inputBadge(type="text", placeholder="ex. CEO", name="title")
+            input#inputTitle(type="text", placeholder="ex. CEO", name="title")
         p picture: 
-            input#inputDob(type="text", name="picture")
+            input#inputPicture(type="text", name="picture")
         p desc: 
-            input#inputIsLoved(type="text", name="desc")
+            input#inputDesc(type="text", name="desc")
         p
             button#btnSubmit(type="submit") submit

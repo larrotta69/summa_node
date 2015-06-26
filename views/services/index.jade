@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	.back
+		section.container
+			- each service, i in services
+				article.row.services_module
+					div.col.s12
+						h2.title.bold #{service.title}
+						p.desc #{service.content}
+						ul.list_services 
+							- each item, i in service.serviceList
+								li
+									= item

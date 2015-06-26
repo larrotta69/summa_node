@@ -1,10 +1,16 @@
 @import 'components/colors',
-		'components/main';
+		'components/main',
+		'components/team';
+
 
 @media #{$small-and-down} {
     
 }
 @media #{$medium-and-down} {
+	.container .row{
+		margin-left: 0;
+		margin-right: 0;
+	}
 	@import 'components/medium/header',
 			'components/medium/services';
 
