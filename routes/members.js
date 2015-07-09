@@ -3,6 +3,11 @@ var express = require('express'),
     mongoose = require('mongoose'), //mongo connection
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
+/*mine*/
+var passport = require('../auth');
+
+router.use(passport.initialize());
+router.use(passport.session());
 
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(methodOverride(function(req, res){
@@ -43,7 +48,7 @@ router.route('/')
         var title = req.body.title;
         var picture = req.body.picture;
         var desc = req.body.desc;
-        
+
         //call the create function for our database
         mongoose.model('Member').create({
             name : name,
@@ -75,7 +80,13 @@ router.route('/')
 
 /* GET New Member page. */
 router.get('/new', function(req, res) {
-    res.render('members/new', { title: 'Add New Member' });
+  if (req.user === undefined){
+    res.redirect('/');
+    console.log(req.user);
+  }
+  else{
+      res.render('members/new', { title: 'Add New Member' });
+  }
 });
 
 // route middleware to validate :id
@@ -104,8 +115,8 @@ router.param('id', function(req, res, next, id) {
             // once validation is done save the new item in the req
             req.id = id;
             // go to the next thing
-            next(); 
-        } 
+            next();
+        }
     });
 });
 
