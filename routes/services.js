@@ -75,7 +75,12 @@ router.route('/')
 
 /* GET New Member page. */
 router.get('/new', function(req, res) {
-    res.render('services/new', { title: 'Add New Service' });
+		if (req.user === undefined)
+				res.redirect('/');
+		else
+				res.render('services/new', { title: 'Add New Service' });
+
+
 });
 
 module.exports = router;

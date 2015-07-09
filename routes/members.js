@@ -50,7 +50,8 @@ router.route('/')
         var desc = req.body.desc;
 
         //call the create function for our database
-        mongoose.model('Member').create({
+        if (req.user === undefined){
+          mongoose.model('Member').create({
             name : name,
             title : title,
             picture : picture,
@@ -76,13 +77,13 @@ router.route('/')
                 });
               }
         })
+        }
     });
 
 /* GET New Member page. */
 router.get('/new', function(req, res) {
   if (req.user === undefined){
     res.redirect('/');
-    console.log(req.user);
   }
   else{
       res.render('members/new', { title: 'Add New Member' });
