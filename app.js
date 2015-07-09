@@ -5,7 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 /*mine*/
-var passport = require('./auth');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -31,17 +32,24 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
-/*mine*/
-app.use(passport.initialize());
-app.use(passport.session());
-/*mine*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+/*mine*/
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+/*mine*/
+
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
+
 /*mine*/
 app.use('/login', routes);
 app.use('/equipo', members);
@@ -49,6 +57,12 @@ app.use('/servicios', services);
 app.use('/contacto', contact);
 /*mine*/
 
+/*mine*/
+var Account = require('./model/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+/*mine*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
