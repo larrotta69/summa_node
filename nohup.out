@@ -1,0 +1,105 @@
+2015-07-02T22:17:14.340+0000 I JOURNAL  [initandlisten] journal dir=/home/larrotta69/webapps/mongo/data/journal
+2015-07-02T22:17:14.340+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-07-02T22:17:14.382+0000 I JOURNAL  [durability] Durability thread started
+2015-07-02T22:17:14.382+0000 I JOURNAL  [journal writer] Journal writer thread started
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] MongoDB starting : pid=3758 port=22550 dbpath=/home/larrotta69/webapps/mongo/data/ 64-bit host=web428.webfaction.com
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] 
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] 
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] 
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. rlimits set to 300 processes, 4096 files. Number of processes should be at least 2048 : 0.5 times number of files.
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] 
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] db version v3.0.4
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] git version: 0481c958daeb2969800511e7475dc66986fa9ed5
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] build info: Linux build9.nj1.10gen.cc 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-07-02T22:17:14.399+0000 I CONTROL  [initandlisten] options: { net: { port: 22550 }, security: { authorization: "enabled" }, storage: { dbPath: "/home/larrotta69/webapps/mongo/data/" } }
+2015-07-02T22:17:14.412+0000 I NETWORK  [initandlisten] waiting for connections on port 22550
+2015-07-02T22:17:15.337+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42625 #1 (1 connection now open)
+2015-07-02T22:17:15.338+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42626 #2 (2 connections now open)
+2015-07-02T22:17:15.338+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42627 #3 (3 connections now open)
+2015-07-02T22:17:15.338+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42628 #4 (4 connections now open)
+2015-07-02T22:17:15.338+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42629 #5 (5 connections now open)
+2015-07-02T22:17:15.338+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42630 #6 (6 connections now open)
+2015-07-02T22:17:15.338+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42631 #7 (7 connections now open)
+2015-07-02T22:17:15.338+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42632 #8 (8 connections now open)
+2015-07-02T22:17:15.339+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42633 #9 (9 connections now open)
+2015-07-02T22:17:15.339+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42634 #10 (10 connections now open)
+2015-07-02T22:17:15.339+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42635 #11 (11 connections now open)
+2015-07-02T22:17:15.339+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42636 #12 (12 connections now open)
+2015-07-02T22:17:15.339+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42637 #13 (13 connections now open)
+2015-07-02T22:17:15.342+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42638 #14 (14 connections now open)
+2015-07-02T22:35:35.873+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40103 #15 (15 connections now open)
+2015-07-02T22:35:35.875+0000 I ACCESS   [conn15] Unauthorized not authorized on admin to execute command { getLog: "startupWarnings" }
+2015-07-02T22:35:35.896+0000 I ACCESS   [conn15] Unauthorized not authorized on admin to execute command { replSetGetStatus: 1.0, forShell: 1.0 }
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn2] end connection 127.0.0.1:42626 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn11] end connection 127.0.0.1:42635 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn10] end connection 127.0.0.1:42634 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn9] end connection 127.0.0.1:42633 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn4] end connection 127.0.0.1:42628 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn13] end connection 127.0.0.1:42637 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn12] end connection 127.0.0.1:42636 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn7] end connection 127.0.0.1:42631 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn6] end connection 127.0.0.1:42630 (14 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn8] end connection 127.0.0.1:42632 (14 connections now open)
+2015-07-02T22:35:51.801+0000 I NETWORK  [conn14] end connection 127.0.0.1:42638 (11 connections now open)
+2015-07-02T22:35:51.801+0000 I NETWORK  [conn1] end connection 127.0.0.1:42625 (9 connections now open)
+2015-07-02T22:35:51.801+0000 I NETWORK  [conn3] end connection 127.0.0.1:42627 (9 connections now open)
+2015-07-02T22:35:51.800+0000 I NETWORK  [conn5] end connection 127.0.0.1:42629 (14 connections now open)
+2015-07-02T22:35:55.852+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40706 #16 (2 connections now open)
+2015-07-02T22:35:55.857+0000 I NETWORK  [conn16] end connection 127.0.0.1:40706 (1 connection now open)
+2015-07-02T22:35:55.860+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40708 #17 (3 connections now open)
+2015-07-02T22:35:55.865+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40709 #18 (3 connections now open)
+2015-07-02T22:35:55.865+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40710 #19 (4 connections now open)
+2015-07-02T22:35:55.865+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40711 #20 (5 connections now open)
+2015-07-02T22:35:55.865+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40712 #21 (6 connections now open)
+2015-07-02T22:35:56.245+0000 I ACCESS   [conn19] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:35:56.245+0000 I ACCESS   [conn18] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:35:56.245+0000 I ACCESS   [conn20] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:35:56.245+0000 I ACCESS   [conn17] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:35:56.245+0000 I ACCESS   [conn21] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:36:26.647+0000 I NETWORK  [conn17] end connection 127.0.0.1:40708 (5 connections now open)
+2015-07-02T22:36:26.647+0000 I NETWORK  [conn19] end connection 127.0.0.1:40710 (5 connections now open)
+2015-07-02T22:36:26.647+0000 I NETWORK  [conn20] end connection 127.0.0.1:40711 (5 connections now open)
+2015-07-02T22:36:26.647+0000 I NETWORK  [conn21] end connection 127.0.0.1:40712 (5 connections now open)
+2015-07-02T22:36:26.647+0000 I NETWORK  [conn18] end connection 127.0.0.1:40709 (5 connections now open)
+2015-07-02T22:36:28.976+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41765 #22 (2 connections now open)
+2015-07-02T22:36:28.981+0000 I NETWORK  [conn22] end connection 127.0.0.1:41765 (1 connection now open)
+2015-07-02T22:36:28.984+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41766 #23 (2 connections now open)
+2015-07-02T22:36:28.984+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41767 #24 (3 connections now open)
+2015-07-02T22:36:28.984+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41768 #25 (4 connections now open)
+2015-07-02T22:36:28.984+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41769 #26 (5 connections now open)
+2015-07-02T22:36:28.984+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41770 #27 (6 connections now open)
+2015-07-02T22:36:29.452+0000 I ACCESS   [conn24] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:36:29.452+0000 I ACCESS   [conn26] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:36:29.452+0000 I ACCESS   [conn27] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:36:29.452+0000 I ACCESS   [conn23] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:36:29.452+0000 I ACCESS   [conn25] Successfully authenticated as principal summaUserAdmin on summadb
+2015-07-02T22:36:38.525+0000 I NETWORK  [conn15] end connection 127.0.0.1:40103 (5 connections now open)
+2015-07-02T22:36:54.295+0000 I CONTROL  [signalProcessingThread] got signal 1 (Hangup), will terminate after current cmd ends
+2015-07-02T22:36:54.295+0000 I CONTROL  [signalProcessingThread] now exiting
+2015-07-02T22:36:54.295+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2015-07-02T22:36:54.295+0000 I NETWORK  [signalProcessingThread] closing listening socket: 5
+2015-07-02T22:36:54.295+0000 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2015-07-02T22:36:54.295+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-22550.sock
+2015-07-02T22:36:54.295+0000 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2015-07-02T22:36:54.295+0000 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2015-07-02T22:36:54.295+0000 I STORAGE  [signalProcessingThread] shutdown: waiting for fs preallocator...
+2015-07-02T22:36:54.295+0000 I STORAGE  [signalProcessingThread] shutdown: final commit...
+2015-07-02T22:36:54.295+0000 I NETWORK  [conn27] end connection 127.0.0.1:41770 (4 connections now open)
+2015-07-02T22:36:54.295+0000 I NETWORK  [conn24] end connection 127.0.0.1:41767 (4 connections now open)
+2015-07-02T22:36:54.295+0000 I NETWORK  [conn25] end connection 127.0.0.1:41768 (4 connections now open)
+2015-07-02T22:36:54.295+0000 I JOURNAL  [signalProcessingThread] journalCleanup...
+2015-07-02T22:36:54.296+0000 I JOURNAL  [signalProcessingThread] removeJournalFiles
+2015-07-02T22:36:54.296+0000 I NETWORK  [conn26] end connection 127.0.0.1:41769 (4 connections now open)
+2015-07-02T22:36:54.296+0000 I NETWORK  [conn23] end connection 127.0.0.1:41766 (0 connections now open)
+2015-07-02T22:36:54.356+0000 I JOURNAL  [signalProcessingThread] Terminating durability thread ...
+2015-07-02T22:36:54.398+0000 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-07-02T22:36:54.398+0000 I JOURNAL  [durability] Durability thread stopped
+2015-07-02T22:36:54.398+0000 I STORAGE  [signalProcessingThread] shutdown: closing all files...
+2015-07-02T22:36:54.400+0000 I STORAGE  [signalProcessingThread] closeAllFiles() finished
+2015-07-02T22:36:54.400+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2015-07-02T22:36:54.400+0000 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
