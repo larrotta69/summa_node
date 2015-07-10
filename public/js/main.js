@@ -14,6 +14,8 @@ $( document ).ready(function(){
 			$('.nav-wrapper li:nth-of-type(1) a').addClass('active');
 			if (getURLParameter('send') === 'true')
 				Materialize.toast('Tu mensaje ha sido enviado con éxito', 4000);
+			if (getURLParameter('log') === 'true')
+				Materialize.toast('Se ha logueado con éxito', 4000);
 			break;
 
 		case '/equipo':
