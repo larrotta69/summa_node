@@ -4,10 +4,6 @@ var express = require('express'),
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
 /*mine*/
-var passport = require('../auth');
-
-router.use(passport.initialize());
-router.use(passport.session());
 
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(methodOverride(function(req, res){
@@ -51,6 +47,9 @@ router.route('/')
 
         //call the create function for our database
         if (req.user === undefined){
+          res.sendStatus(404);
+        }
+        else{
           mongoose.model('Member').create({
             name : name,
             title : title,
@@ -83,7 +82,7 @@ router.route('/')
 /* GET New Member page. */
 router.get('/new', function(req, res) {
   if (req.user === undefined){
-    res.redirect('/');
+    res.render('404', {title: '404: File Not Found'});
   }
   else{
       res.render('members/new', { title: 'Add New Member' });
@@ -94,7 +93,11 @@ router.get('/new', function(req, res) {
 router.param('id', function(req, res, next, id) {
     //console.log('validating ' + id + ' exists');
     //find the ID in the Database
-    mongoose.model('Member').findById(id, function (err, blob) {
+    if (req.user === undefined){
+      res.render('404', {title: '404: File Not Found'});
+    }
+    else{
+      mongoose.model('Member').findById(id, function (err, blob) {
         //if it isn't found, we are going to repond with 404
         if (err) {
             console.log(id + ' was not found');
@@ -118,11 +121,13 @@ router.param('id', function(req, res, next, id) {
             // go to the next thing
             next();
         }
-    });
+      });
+    }
 });
 
 router.route('/:id')
 	.get(function(req, res){
+
 		mongoose.model('Member').findById(req.id, function(error, member){
 			if (error)
 				console.log('Problem retrieving a member by their ID'+ error );

@@ -45,12 +45,14 @@ router.route('/')
 
         console.log(title, content, serviceList);
         //call the create function for our database
-
-        mongoose.model('Service').create({
+				if (req.user === undefined)
+					res.sendStatus(404);
+				else {
+        	mongoose.model('Service').create({
             title : title,
             content : content,
             serviceList : serviceList
-        }, function (err, service) {
+        	}, function (err, service) {
               if (err) {
                   res.send("There was a problem adding the service to the database.");
               } else {
@@ -71,12 +73,13 @@ router.route('/')
                 });
               }
         })
+				}
     });
 
 /* GET New Member page. */
 router.get('/new', function(req, res) {
 		if (req.user === undefined)
-				res.redirect('/');
+      res.render('404', {title: '404: File Not Found'});
 		else
 				res.render('services/new', { title: 'Add New Service' });
 

@@ -47,6 +47,9 @@ app.use(passport.session());
 /*mine*/
 
 app.use(express.static(path.join(__dirname, 'public')));
+// Handle 404
+
+
 app.use('/', routes);
 app.use('/users', users);
 
@@ -68,7 +71,8 @@ passport.deserializeUser(Account.deserializeUser());
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
-  next(err);
+  res.render('404', {title: '404: File Not Found'});
+  //next(err);
 });
 
 // error handlers

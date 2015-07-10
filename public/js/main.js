@@ -6,12 +6,16 @@ $( document ).ready(function(){
 	});
 	$('.modal-trigger').leanModal();
 
-	
+
+
 
 	switch(window.location.pathname){
 		case '/':
 			$('.nav-wrapper li:nth-of-type(1) a').addClass('active');
+			if (getURLParameter('send') === 'true')
+				Materialize.toast('Tu mensaje ha sido enviado con éxito', 4000);
 			break;
+
 		case '/equipo':
 			$('.nav-wrapper li:nth-of-type(2) a').addClass('active');
 			break;
@@ -20,12 +24,12 @@ $( document ).ready(function(){
 			break;
 		case '/contacto':
 			google.maps.event.addDomListener(window, 'load', initializeBogota);
-			google.maps.event.addDomListener(window, 'load', initializeBarcelona);		
+			google.maps.event.addDomListener(window, 'load', initializeBarcelona);
 			$('.nav-wrapper li:nth-of-type(4) a').addClass('active');
 			break;
 	}
 });
- 
+
 function initializeBogota() {
 	var mapCanvas = document.getElementById('map-canvas-bogota');
 	var mapOptions = {
@@ -43,4 +47,7 @@ function initializeBarcelona() {
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 	var map = new google.maps.Map(mapCanvasBar, mapOptionsBar);
+}
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 }
