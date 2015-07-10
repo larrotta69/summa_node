@@ -3,6 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose'), //mongo connection
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
+/*mine*/
 
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(methodOverride(function(req, res){
@@ -43,9 +44,13 @@ router.route('/')
         var title = req.body.title;
         var picture = req.body.picture;
         var desc = req.body.desc;
-        
+
         //call the create function for our database
-        mongoose.model('Member').create({
+        if (req.user === undefined){
+          res.sendStatus(404);
+        }
+        else{
+          mongoose.model('Member').create({
             name : name,
             title : title,
             picture : picture,
@@ -71,18 +76,28 @@ router.route('/')
                 });
               }
         })
+        }
     });
 
 /* GET New Member page. */
 router.get('/new', function(req, res) {
-    res.render('members/new', { title: 'Add New Member' });
+  if (req.user === undefined){
+    res.render('404', {title: '404: File Not Found'});
+  }
+  else{
+      res.render('members/new', { title: 'Add New Member' });
+  }
 });
 
 // route middleware to validate :id
 router.param('id', function(req, res, next, id) {
     //console.log('validating ' + id + ' exists');
     //find the ID in the Database
-    mongoose.model('Member').findById(id, function (err, blob) {
+    if (req.user === undefined){
+      res.render('404', {title: '404: File Not Found'});
+    }
+    else{
+      mongoose.model('Member').findById(id, function (err, blob) {
         //if it isn't found, we are going to repond with 404
         if (err) {
             console.log(id + ' was not found');
@@ -104,13 +119,15 @@ router.param('id', function(req, res, next, id) {
             // once validation is done save the new item in the req
             req.id = id;
             // go to the next thing
-            next(); 
-        } 
-    });
+            next();
+        }
+      });
+    }
 });
 
 router.route('/:id')
 	.get(function(req, res){
+
 		mongoose.model('Member').findById(req.id, function(error, member){
 			if (error)
 				console.log('Problem retrieving a member by their ID'+ error );

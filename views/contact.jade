@@ -11,19 +11,19 @@ block content
 						a(href="#barcelona") Barcelona
 			.row.contact_forms
 				div#bogota.s12.col.contact_form
-					form
+					form#formMail(name="mailer", method="post", action="/mailer")
 						.row
 							.input-field.col.s6
 								i.material-icons.prefix account_circle
-								input#icon_prefix.validate(type="text")
+								input#icon_prefix.validate(type="text", name="nombre")
 								label(for="icon_prefix") Name
 							.input-field.col.s6
 								i.material-icons.prefix phone
-								input#icon_telephone.validate(type="text")
+								input#icon_telephone.validate(type="text", name="telefono")
 								label(for="icon_telephone") Telephone
 							.input-field.col.s12
 								i.material-icons.prefix mode_edit
-								textarea#icon_message.materialize-textarea
+								textarea#icon_message.materialize-textarea(name="mensaje")
 								label(for="icon_message") Message
 							.col.s12.center-align
 								button.btn.waves-effect.waves-light(type="submit") Enviar

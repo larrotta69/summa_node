@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1.
+        #{title}
+    form#formLogin(name="login",method="post",action="/login")
+        p Nombre:
+            input#inputLogin(type="text", placeholder="user", name="username")
+        p Password:
+            input#inputPass(type="password", placeholder="pass", name="password")
+        p
+            button#btnSubmit(type="submit") submit

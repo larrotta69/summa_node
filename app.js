@@ -4,6 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+/*mine*/
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -32,22 +35,44 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+/*mine*/
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+/*mine*/
+
 app.use(express.static(path.join(__dirname, 'public')));
+// Handle 404
+
 
 app.use('/', routes);
 app.use('/users', users);
+
 /*mine*/
+app.use('/login', routes);
 app.use('/equipo', members);
 app.use('/servicios', services);
 app.use('/contacto', contact);
 /*mine*/
 
+/*mine*/
+var Account = require('./model/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+/*mine*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
-  next(err);
+  res.render('404', {title: '404: File Not Found'});
+  //next(err);
 });
 
 // error handlers
