@@ -94,14 +94,14 @@ router.param('id', function(req, res, next, id) {
     //console.log('validating ' + id + ' exists');
     //find the ID in the Database
     if (req.user === undefined){
-      res.render('404', {title: '404: File Not Found'});
+      res.render('404', {title: '404: Member Not Found'});
     }
     else{
-      mongoose.model('Member').findById(id, function (err, blob) {
+      mongoose.model('Member').findById(id, function (err, member) {
         //if it isn't found, we are going to repond with 404
         if (err) {
             console.log(id + ' was not found');
-            res.status(404)
+            res.status(404);
             var err = new Error('Not Found');
             err.status = 404;
             res.format({
@@ -115,7 +115,7 @@ router.param('id', function(req, res, next, id) {
         //if it is found we continue on
         } else {
             //uncomment this next line if you want to see every JSON document response for every GET/PUT/DELETE call
-            //console.log(blob);
+            console.log(member);
             // once validation is done save the new item in the req
             req.id = id;
             // go to the next thing
@@ -132,12 +132,12 @@ router.route('/:id')
 			if (error)
 				console.log('Problem retrieving a member by their ID'+ error );
 			else{
-				console.log('Retrieving memeber from DB by ID'+ member._id);
+				console.log('Retrieving member from DB by ID'+ member._id);
 				res.format({
 					html: function(){
 						res.render('members/show', {
-							title : "Show a member",
-							da : member
+							title : "Mostrando un miembro del equipo",
+							member : member
 						});
 					},
 					json: function(){
@@ -147,6 +147,56 @@ router.route('/:id')
 			}
 		});
 	});
+//Render the view for Edit by ID
+router.get('/:id/edit', function(req, res){
+	mongoose.model('Member').findById(req.id, function(error, member){
+		if (error)
+			console.log('Error retrieving the member '+ error);
+		else{
+			res.format({
+				html: function(){
+					res.render('members/edit',{
+						title: 'Miembro número '+ member._id,
+						member: member
+					});
+				},
+				json: function(){
+					res.json(member);
+				}
+			})
+		}
+	});
+});
+
+//Put to DB for Edit by ID
+router.put('/:id/edit', function(req, res){
+	var name = req.body.name;
+	var title = req.body.title;
+	var picture = req.body.picture;
+  var desc = req.body.desc;
+
+	mongoose.model('Member').findById(req.id, function(error, member){
+		member.update({
+			name: name,
+			title: title,
+			picture: picture,
+      desc: desc
+		}, function(error, memberID){
+			if (error)
+				res.send('Error in database updating from PUT member');
+			else {
+				res.format({
+					html: function(){
+						res.redirect('/equipo/'+member._id);
+					},
+					json: function(){
+						res.json(member);
+					}
+				});
+			}
+		});
+	});
+});
 
 
 

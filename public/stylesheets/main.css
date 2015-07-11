@@ -93,33 +93,41 @@ footer.page-footer {
     /* line 86, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.facebook {
       background: #3c5999; }
-    /* line 89, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+      /* line 88, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+      footer.page-footer .social-foot .icon-foot.facebook img {
+        margin-top: -4px;
+        width: 70%; }
+    /* line 93, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.twitter {
-      background: #00adef; }
-    /* line 92, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+      background: white; }
+      /* line 95, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+      footer.page-footer .social-foot .icon-foot.twitter img {
+        width: 26px;
+        margin-top: 1px; }
+    /* line 100, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.mail {
       background: #999999; }
 
 /*@goup services*/
-/* line 102, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 110, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .container .services_module {
   padding-bottom: 30px;
   margin: 0;
   border-bottom: 3px solid #f3f3f3; }
-  /* line 106, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 114, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module .title {
     font-size: 2rem;
     font-family: bitter;
     color: #ba5330; }
-  /* line 111, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 119, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module .desc {
     font-size: 1rem; }
-  /* line 115, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 123, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module .list_services li {
     font-size: 1rem;
     padding-left: 15px;
     position: relative; }
-    /* line 119, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    /* line 127, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     .container .services_module .list_services li:before {
       display: block;
       width: 5px;
@@ -131,55 +139,63 @@ footer.page-footer {
       left: 0;
       top: 50%;
       margin-top: -2px; }
-  /* line 133, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 141, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module:last-child {
     margin-bottom: 0;
     border-bottom: 0; }
 
 /*@end services*/
-/* line 143, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 151, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .tabs .tab a {
   color: black; }
-  /* line 145, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 153, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .tabs .tab a:hover {
     color: #ba5330; }
 
-/* line 150, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 158, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .tabs .indicator {
   background-color: #ba5330; }
 
-/* line 154, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 162, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .btn {
   padding: 12px 2rem;
   line-height: 1;
   vertical-align: top;
   background-color: #ba5330; }
-  /* line 159, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 167, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .btn .material-icons {
     margin-left: 20px;
     position: relative;
     top: -3px; }
-  /* line 164, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 172, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .btn:hover {
     background-color: #B34621; }
 
 /*map*/
-/* line 170, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 178, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .mapa {
   padding-bottom: 30px;
   border-bottom: 1px solid #BBB;
   margin-bottom: 30px;
   margin-top: 30px; }
 
-/* line 176, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 184, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .map-canvas {
   width: 700px;
   height: 300px;
   margin: 0 auto; }
 
-/* line 182, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 190, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .loc p {
   margin-top: 0; }
+
+/*admin section*/
+/* line 196, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+.edit_item .actions_item {
+  margin-top: 40px; }
+  /* line 198, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  .edit_item .actions_item a {
+    margin: 0 10px; }
 
 /* line 1, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
 .team_module {

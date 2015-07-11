@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    .container.admin_form
+      h1.
+          #{title}
+      .row
+        .col.s12
+          form#formEditMember(name="editmember",method="post",action="/equipo/#{member._id}/edit",enctype='application/x-www-form-urlencoded')
+              h5 Nombre: 
+                  input#inputName(value="#{member.name}", type="text", name="name")
+              h5 Título:
+                  input#inputTitle(value="#{member.title}", type="text", name="title")
+              h5 Foto: 
+                  input#inputPicture(value="#{member.picture}", type="text", name="picture")
+              h5 Descripción: 
+                  input#inputDesc(value="#{member.desc}", type="text", name="desc")
+              p
+                input(type='hidden',value='PUT',name='_method')
+              p.center-align
+                  button.btn.waves-effect.waves-light#btnSubmit(type="submit") Editar miembro del equipo
+                    i.material-icons send
+              br
+              br

@@ -85,9 +85,17 @@ footer.page-footer{
 			}
 			&.facebook{
 				background: #3c5999;
+				img{
+					margin-top: -4px;
+					width: 70%;
+				}
 			}
 			&.twitter{
-				background: #00adef;
+				background: white;
+				img{
+					width: 26px;
+					margin-top: 1px;
+				}
 			}
 			&.mail{
 				background: #999999;
@@ -181,5 +189,14 @@ footer.page-footer{
 .loc{
 	p{
 		margin-top: 0;
+	}
+}
+/*admin section*/
+.edit_item{
+	.actions_item{
+		margin-top: 40px;
+		a{
+			margin: 0 10px;
+		}
 	}
 }
