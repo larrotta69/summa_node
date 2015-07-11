@@ -76,14 +76,119 @@ router.route('/')
 				}
     });
 
-/* GET New Member page. */
+/* GET New Service page. */
 router.get('/new', function(req, res) {
 		if (req.user === undefined)
       res.render('404', {title: '404: File Not Found'});
 		else
-				res.render('services/new', { title: 'Add New Service' });
-
-
+			res.render('services/new', { title: 'Agregar un servicio' });
 });
 
+// route middleware to validate :id
+router.param('id', function(req, res, next, id) {
+    //console.log('validating ' + id + ' exists');
+    //find the ID in the Database
+    if (req.user === undefined){
+      res.render('404', {title: '404: Service Not Found'});
+    }
+    else{
+      mongoose.model('Service').findById(id, function (err, service) {
+        //if it isn't found, we are going to repond with 404
+        if (err) {
+            console.log(id + ' was not found');
+            res.status(404)
+            var err = new Error('Not Found');
+            err.status = 404;
+            res.format({
+                html: function(){
+                    next(err);
+                 },
+                json: function(){
+                       res.json({message : err.status  + ' ' + err});
+                 }
+            });
+        //if it is found we continue on
+        } else {
+            //uncomment this next line if you want to see every JSON document response for every GET/PUT/DELETE call
+            //console.log(service);
+            // once validation is done save the new item in the req
+            req.id = id;
+            // go to the next thing
+            next();
+        }
+      });
+    }
+});
+
+//Get by ID
+router.route('/:id')
+			.get(function(req, res){
+				mongoose.model('Service').findById(req.id, function(error, service){
+					if (error)
+						console.log('Problem retrieving a service by their ID'+ error );
+					else{
+						console.log('Retrieving service from DB by ID'+ service._id);
+						res.format({
+							html: function(){
+								res.render('services/show', {
+									title : "Mostrando el servicio",
+									service : service
+								});
+							},
+							json: function(){
+								res.json(service);
+							}
+						});
+					}
+				});
+			});
+
+//Render the view for Edit by ID
+router.get('/:id/edit', function(req, res){
+	mongoose.model('Service').findById(req.id, function(error, service){
+		if (error)
+			console.log('Error retrieving the service '+ error);
+		else{
+			res.format({
+				html: function(){
+					res.render('services/edit',{
+						title: 'Servicio número '+ service._id,
+						service: service
+					});
+				},
+				json: function(){
+					res.json(service);
+				}
+			})
+		}
+	});
+});
+
+//Put to DB for Edit by ID
+router.put('/:id/edit', function(req, res){
+	var title = req.body.title;
+	var content = req.body.content;
+	var serviceList = req.body.serviceList.split(',');
+
+	mongoose.model('Service').findById(req.id, function(error, service){
+		service.update({
+			title: title,
+			content: content,
+			serviceList: serviceList
+		}, function(error, serviceID){
+			if (error)
+				res.send('Error in database updating from PUT service');
+			else {
+				res.format({
+					html: function(){
+						res.redirect('/servicios/'+service._id);
+					},
+					json: function(){
+						res.json(service);
+					}
+				});
+			}
+		});
+	});
+});
 module.exports = router;

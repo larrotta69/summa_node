@@ -1,14 +1,20 @@
 extends ../layout
 
 block content
-    h1.
-        #{title}
-    form#formAddService(name="addservice",method="post",action="/servicios")
-        p title: 
-            input#inputTitle(type="text", placeholder="ex. Comercio Internacional", name="title")
-        p content:
-            input#inputContent(type="text", placeholder="ex. Prestamos apoyo", name="content")
-        p serviceList: 
-            input#inputServiceList(type="text", name="serviceList")
-        p
-            button#btnSubmit(type="submit") submit
+    .container.admin_form
+      h1.
+          #{title}
+      .row
+        .col.s12
+          form#formAddService(name="addservice",method="post",action="/servicios")
+              h5 Título: 
+                  input#inputTitle(type="text", placeholder="ex. Comercio Internacional", name="title")
+              h5 Contenido:
+                  input#inputContent(type="text", placeholder="ex. Prestamos apoyo", name="content")
+              h5 Lista de servicios (servicio uno,servicio dos,servicio tres): 
+                  input#inputServiceList(type="text", name="serviceList")
+              p.center-align
+                  button.btn.waves-effect.waves-light#btnSubmit(type="submit") Agregar servicio
+                    i.material-icons send
+              br
+              br

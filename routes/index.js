@@ -40,7 +40,7 @@ router.post('/mailer', function(req, res){
     res.redirect('/?send=true');
   });
 });
-
+/*
 router.get('/register', function(req, res) {
   res.render('register', { });
 });
@@ -55,5 +55,5 @@ router.post('/register', function(req, res) {
     });
   });
 });
-
+*/
 module.exports = router;

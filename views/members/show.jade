@@ -1,9 +1,23 @@
 extends ../layout
 
 block content
-	h1.
-		#{title}
+	.back.edit_item
+		section.container
+			h1.left.
+				#{title}
+			.right.actions_item
+				a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}/edit")
+					i.material-icons create
+				a.btn-floating.btn-large.waves-effect.waves-light.red
+					i.material-icons clear
+			article.row.team_module
+				.col.s12.member
+					.col.s12.member_image
+						img(src="/img/equipo/#{member.picture}")
+					.col.s12.image
+						h5.member_name #{member.name}
+						p.member_title #{member.title}
+						p #{member.desc}
 	ul
 		li
-			#{da}
-			
+			#{member}
