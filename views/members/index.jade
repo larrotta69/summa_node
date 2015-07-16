@@ -11,9 +11,22 @@ block content
                         div.col.s12.m6.image
                             h5.member_name #{member.name}
                             p.member_title #{member.title}
+              div.col.s12.m6.member
+                  div.col.s12.m6.member_image
+                      img(src="/img/equipo/cesar_prieto.jpg")
+                  div.col.s12.m6.image
+                      h5.member_name Cesar Prieto
+                      p.member_title Oficina Lima
+              div.col.s12.m6.member
+                  div.col.s12.m6.member_image
+                      img(src="/img/equipo/cesar_prieto.jpg")
+                  div.col.s12.m6.image
+                      h5.member_name Carlos Esteban Jaramillo Schloss
+                      p.member_title Consultor Oficina Bogotá
+              
             - each member, index in members
                 div(id="modal#{index}", class="modal modal_team")
                     img(class="img_modal_team", src="/img/equipo/large/#{member.picture}")
                     div.modal-content
                         h4= member.name
-                        p= member.desc
+                        p !{member.desc}

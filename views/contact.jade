@@ -9,6 +9,8 @@ block content
 						a(href="#bogota") Bogotá
 					li.tab.col.s3
 						a(href="#barcelona") Barcelona
+					li.tab.col.s3
+						a(href="#lima") Lima
 			.row.contact_forms
 				div#bogota.s12.col.contact_form
 					form#formMail(name="mailer", method="post", action="/mailer")
@@ -33,17 +35,17 @@ block content
 							#map-canvas-bogota.map-canvas
 					.row.loc
 						.m6.col.left-align
-							p Localización de la oficina
+							p Bogotá - Colombia
 						.m6.col.right-align
 							p
 								strong Tel: 
-								span (916) 256 21 55
+								span +57 (1) 3462668
 						.m6.col.left-align
-							p Dirección de la oficina
+							p Calle 69A No. 4-31
 						.m6.col.right-align
 							p
-								strong Fax: 
-								span (916) 256 21 55
+								strong Tel: 
+								span +57 3133507816
 
 				div#barcelona.s12.col.contact_form
 					form
@@ -68,14 +70,46 @@ block content
 							#map-canvas-barcelona.map-canvas
 					.row.loc
 						.m6.col.left-align
-							p Localización de la oficina
+							p Barcelona - España
 						.m6.col.right-align
 							p
 								strong Tel: 
-								span (916) 265 12 65
+								span  +34 93 531 16 16
 						.m6.col.left-align
-							p Dirección de la oficina
+							p Muntaner, 340, 2º 2ª. 08021. 
 						.m6.col.right-align
 							p
-								strong Fax: 
-								span (916) 256 12 67
+								strong Tel: 
+								span  +34 93 531 16 18
+								
+				div#lima.s12.col.contact_form
+					form
+						.row
+							.input-field.col.s6
+								i.material-icons.prefix account_circle
+								input#icon_prefix.validate(type="text")
+								label(for="icon_prefix") Name
+							.input-field.col.s6
+								i.material-icons.prefix phone
+								input#icon_telephone.validate(type="text")
+								label(for="icon_telephone") Telephone
+							.input-field.col.s12
+								i.material-icons.prefix mode_edit
+								textarea#icon_message.materialize-textarea
+								label(for="icon_message") Message
+							.col.s12.center-align
+								button.btn.waves-effect.waves-light(type="submit") Enviar
+									i.material-icons send
+					.row.mapa
+						.s12.col
+							#map-canvas-lima.map-canvas
+					.row.loc
+						.m6.col.left-align
+							p Miraflores – Lima
+						.m6.col.right-align
+							p
+								strong Tel: 
+								span  + 51 (1) 959171049
+						.m6.col.left-align
+							p Calle Enrique Palacios, 335 oficina 501 
+						.m6.col.right-align
