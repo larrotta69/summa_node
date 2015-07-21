@@ -20,57 +20,65 @@
     margin-bottom: 10px; }
 
 /* line 15, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+.linke {
+  width: 50%; }
+
+/* line 18, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+#formMail {
+  margin-top: 30px; }
+
+/* line 21, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .header-nav {
   background: #38464f;
   -webkit-box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.25);
   position: relative; }
-  /* line 23, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 29, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .header-nav ul li a {
     text-transform: uppercase;
     font-family: bitter;
     font-size: 1.2rem;
     font-weight: bold; }
-    /* line 28, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    /* line 34, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     .header-nav ul li a.active {
       color: #ba5330; }
 
-/* line 36, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 42, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .slider {
   height: calc(100vh - 116px); }
-  /* line 38, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 44, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .slider .slides {
     height: calc(100vh - 116px); }
-  /* line 41, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 47, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .slider h5 {
     font-size: 1.5rem;
     line-height: 1.2; }
-  /* line 45, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 51, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .slider h3 {
     color: #ba5330;
     font-size: 3rem;
     font-family: bitter;
     line-height: 1.2; }
 
-/* line 53, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 59, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .bold {
   font-weight: bold; }
 
-/* line 56, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 62, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .row {
   margin-bottom: 0; }
 
-/* line 59, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 65, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .back {
   background: #f3f3f3; }
 
-/* line 62, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 68, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .container {
   background: white;
   min-height: calc(100vh - 125px); }
 
-/* line 66, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 72, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 footer.page-footer {
   margin: 0;
   background-color: #38464f;
@@ -79,11 +87,11 @@ footer.page-footer {
   -webkit-justify-content: flex-end;
   -ms-justify-content: flex-end;
   padding: 10px 0; }
-  /* line 74, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 80, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   footer.page-footer .footer-copyright {
     position: absolute;
     left: 20px; }
-  /* line 79, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 85, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   footer.page-footer .social-foot .icon-foot {
     float: left;
     float: left;
@@ -96,47 +104,52 @@ footer.page-footer {
     font-size: 25px;
     line-height: 1;
     color: white; }
-    /* line 91, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    /* line 97, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot a {
       color: white; }
-    /* line 94, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    /* line 100, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.facebook {
       background: #3c5999; }
-      /* line 96, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+      /* line 102, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
       footer.page-footer .social-foot .icon-foot.facebook img {
         margin-top: -4px;
         width: 70%; }
-    /* line 101, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    /* line 107, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.twitter {
       background: white; }
-      /* line 103, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+      /* line 109, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
       footer.page-footer .social-foot .icon-foot.twitter img {
         width: 26px;
         margin-top: 1px; }
-    /* line 108, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    /* line 114, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     footer.page-footer .social-foot .icon-foot.mail {
       background: #999999; }
 
 /*@goup services*/
-/* line 118, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 124, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .container .services_module {
   padding-bottom: 30px;
   margin: 0;
   border-bottom: 3px solid #f3f3f3; }
-  /* line 122, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 128, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module .title {
     font-size: 2rem;
     font-family: bitter;
-    color: #ba5330; }
-  /* line 127, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    color: #ba5330;
+    cursor: pointer; }
+  /* line 134, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module .desc {
-    font-size: 1rem; }
-  /* line 131, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    font-size: 1rem;
+    overflow: hidden; }
+    /* line 137, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    .container .services_module .desc.service_desc {
+      display: none; }
+  /* line 142, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module .list_services li {
     font-size: 1rem;
     padding-left: 15px;
     position: relative; }
-    /* line 135, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+    /* line 146, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
     .container .services_module .list_services li:before {
       display: block;
       width: 5px;
@@ -148,61 +161,61 @@ footer.page-footer {
       left: 0;
       top: 50%;
       margin-top: -2px; }
-  /* line 149, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 160, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .container .services_module:last-child {
     margin-bottom: 0;
     border-bottom: 0; }
 
 /*@end services*/
-/* line 159, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 170, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .tabs .tab a {
   color: black; }
-  /* line 161, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 172, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .tabs .tab a:hover {
     color: #ba5330; }
 
-/* line 166, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 177, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .tabs .indicator {
   background-color: #ba5330; }
 
-/* line 170, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 181, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .btn {
   padding: 12px 2rem;
   line-height: 1;
   vertical-align: top;
   background-color: #ba5330; }
-  /* line 175, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 186, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .btn .material-icons {
     margin-left: 20px;
     position: relative;
     top: -3px; }
-  /* line 180, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 191, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .btn:hover {
     background-color: #B34621; }
 
 /*map*/
-/* line 186, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 197, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .mapa {
   padding-bottom: 30px;
   border-bottom: 1px solid #BBB;
   margin-bottom: 30px;
   margin-top: 30px; }
 
-/* line 192, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 203, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .map-canvas {
   width: 700px;
   height: 300px;
   margin: 0 auto; }
 
-/* line 198, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 209, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .loc p {
   margin-top: 0; }
 
 /*admin section*/
-/* line 204, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+/* line 215, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
 .edit_item .actions_item {
   margin-top: 40px; }
-  /* line 206, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
+  /* line 217, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_main.scss */
   .edit_item .actions_item a {
     margin: 0 10px; }
 
@@ -224,17 +237,21 @@ footer.page-footer {
   .team_module .member_title {
     color: #BBB;
     margin-top: 0; }
-  /* line 19, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
+  /* line 18, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
+  .team_module .member_mail {
+    font-size: 12px;
+    color: black; }
+  /* line 23, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
   .team_module .member_image img {
     width: 100%; }
-  /* line 27, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
+  /* line 31, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
   .team_module .modal_team .img_modal_team {
     width: 100%; }
 
-/* line 34, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
+/* line 38, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
 .contact_module {
   margin-top: 3rem; }
-  /* line 39, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
+  /* line 43, /Users/danlarro/Documents/daniel/summa/summa_node/public/sass/components/_team.scss */
   .contact_module .contact_form {
     margin-top: 30px; }
 

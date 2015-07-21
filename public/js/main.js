@@ -6,6 +6,17 @@ $( document ).ready(function(){
 	});
 	$('.modal-trigger').leanModal();
 
+	$('.title_service').on('click', function(){
+		var nextDesc = $(this).next('.service_desc');
+
+		if (nextDesc.hasClass('open'))
+			nextDesc.removeClass('open').slideUp();
+		else{
+			$('.service_desc').removeClass('open').slideUp();
+			nextDesc.addClass('open').slideDown();
+		}
+
+	});
 
 
 

@@ -26,14 +26,14 @@ router.get('/logout', function(req, res) {
 
 router.post('/mailer', function(req, res){
   var nombre = req.body.nombre,
-      telefono = req.body.telefono,
+      mail = req.body.mail,
       mensaje = req.body.mensaje;
 
   sendgrid.send({
-    to:       'larrotta69@gmail.com',
-    from:     'larrotta69@gmail.com',
+    to:       ['aprim@summa-consultores.com', 'ejaramillo@summa-consultores.com', 'larrotta69@gmail.com'],
+    from:     'ejaramillo@summa-consultores.com',
     subject:  'Correo de summa-consultores',
-    html:     '<h1>Correo </h1><br><p>Nombre: </p>'+nombre+'<br><p>Teléfono: </p>'+telefono+'<br><p>Mensaje: </p>'+mensaje
+    html:     '<h1>Correo </h1><br><p>Nombre: </p>'+nombre+'<br><p>Correo: </p>'+mail+'<br><p>Mensaje: </p>'+mensaje
   }, function(err, json) {
     if (err) { return console.error(err); }
     console.log(json);

@@ -12,6 +12,12 @@
 		margin-bottom: 10px;
 	}
 }
+.linke{
+	width: 50%;
+}
+#formMail{
+		margin-top: 30px;
+}
 .header-nav{
 	background: $gray_summa;
 	-webkit-box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.25);
@@ -123,9 +129,14 @@ footer.page-footer{
 			font-size: 2rem;
 			font-family: bitter;
 			color: $orange_summa;
+			cursor: pointer;
 		}
 		.desc{
 			font-size: 1rem;
+			overflow: hidden;
+			&.service_desc{
+				display: none;
+			}
 		}
 		.list_services{
 			li{

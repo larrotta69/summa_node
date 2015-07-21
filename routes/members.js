@@ -43,6 +43,8 @@ router.route('/')
         var name = req.body.name;
         var title = req.body.title;
         var picture = req.body.picture;
+        var mail = req.body.mail;
+        var linkedin = req.body.linkedin;
         var desc = req.body.desc;
 
         //call the create function for our database
@@ -53,6 +55,8 @@ router.route('/')
           mongoose.model('Member').create({
             name : name,
             title : title,
+            mail : mail,
+            linkedin : linkedin,
             picture : picture,
             desc : desc
         }, function (err, member) {
@@ -173,6 +177,8 @@ router.put('/:id/edit', function(req, res){
 	var name = req.body.name;
 	var title = req.body.title;
 	var picture = req.body.picture;
+  var mail = req.body.mail;
+  var linkedin = req.body.linkedin;
   var desc = req.body.desc;
 
 	mongoose.model('Member').findById(req.id, function(error, member){
@@ -180,6 +186,8 @@ router.put('/:id/edit', function(req, res){
 			name: name,
 			title: title,
 			picture: picture,
+      mail: mail,
+      linkedin: linkedin,
       desc: desc
 		}, function(error, memberID){
 			if (error)

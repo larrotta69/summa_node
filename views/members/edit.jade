@@ -9,6 +9,10 @@ block content
           form#formEditMember(name="editmember",method="post",action="/equipo/#{member._id}/edit",enctype='application/x-www-form-urlencoded')
               h5 Nombre: 
                   input#inputName(value="#{member.name}", type="text", name="name")
+              h5 Correo: 
+                  input#inputMail(value="#{member.mail}", type="text", name="mail")
+              h5 LinkedIn: 
+                  input#inputLinked(value="#{member.linkedin}", type="text", name="linkedin")
               h5 Título:
                   input#inputTitle(value="#{member.title}", type="text", name="title")
               h5 Foto: 

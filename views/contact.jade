@@ -3,7 +3,7 @@ extends layout
 block content
 	section.container
 		article.row.contact_module
-			.col.s6
+			.col.s12
 				ul.tabs
 					li.tab.col.s3
 						a(href="#bogota") Bogotá
@@ -11,28 +11,28 @@ block content
 						a(href="#barcelona") Barcelona
 					li.tab.col.s3
 						a(href="#lima") Lima
+					li.tab.col.s3
+						a(href="#chile") Santiago de Chile
+						
+			form.col.s12#formMail(name="mailer", method="post", action="/mailer")
+				.row
+					.input-field.col.s6
+						i.material-icons.prefix account_circle
+						input#icon_prefix.validate(type="text", name="nombre")
+						label(for="icon_prefix") Nombre
+					.input-field.col.s6
+						i.material-icons.prefix mail
+						input#icon_mail.validate(type="text", name="mail")
+						label(for="icon_mail") Mail
+					.input-field.col.s12
+						i.material-icons.prefix mode_edit
+						textarea#icon_message.materialize-textarea(name="mensaje")
+						label(for="icon_message") Mensaje
+					.col.s12.center-align
+						button.btn.waves-effect.waves-light(type="submit") Enviar
+							i.material-icons send
 			.row.contact_forms
 				div#bogota.s12.col.contact_form
-					form#formMail(name="mailer", method="post", action="/mailer")
-						.row
-							.input-field.col.s6
-								i.material-icons.prefix account_circle
-								input#icon_prefix.validate(type="text", name="nombre")
-								label(for="icon_prefix") Name
-							.input-field.col.s6
-								i.material-icons.prefix phone
-								input#icon_telephone.validate(type="text", name="telefono")
-								label(for="icon_telephone") Telephone
-							.input-field.col.s12
-								i.material-icons.prefix mode_edit
-								textarea#icon_message.materialize-textarea(name="mensaje")
-								label(for="icon_message") Message
-							.col.s12.center-align
-								button.btn.waves-effect.waves-light(type="submit") Enviar
-									i.material-icons send
-					.row.mapa
-						.s12.col
-							#map-canvas-bogota.map-canvas
 					.row.loc
 						.m6.col.left-align
 							p Bogotá - Colombia
@@ -46,28 +46,10 @@ block content
 							p
 								strong Tel: 
 								span +57 3133507816
-
-				div#barcelona.s12.col.contact_form
-					form
-						.row
-							.input-field.col.s6
-								i.material-icons.prefix account_circle
-								input#icon_prefix.validate(type="text")
-								label(for="icon_prefix") Name
-							.input-field.col.s6
-								i.material-icons.prefix phone
-								input#icon_telephone.validate(type="text")
-								label(for="icon_telephone") Telephone
-							.input-field.col.s12
-								i.material-icons.prefix mode_edit
-								textarea#icon_message.materialize-textarea
-								label(for="icon_message") Message
-							.col.s12.center-align
-								button.btn.waves-effect.waves-light(type="submit") Enviar
-									i.material-icons send
 					.row.mapa
 						.s12.col
-							#map-canvas-barcelona.map-canvas
+							#map-canvas-bogota.map-canvas
+				div#barcelona.s12.col.contact_form
 					.row.loc
 						.m6.col.left-align
 							p Barcelona - España
@@ -81,31 +63,13 @@ block content
 							p
 								strong Tel: 
 								span  +34 93 531 16 18
-								
-				div#lima.s12.col.contact_form
-					form
-						.row
-							.input-field.col.s6
-								i.material-icons.prefix account_circle
-								input#icon_prefix.validate(type="text")
-								label(for="icon_prefix") Name
-							.input-field.col.s6
-								i.material-icons.prefix phone
-								input#icon_telephone.validate(type="text")
-								label(for="icon_telephone") Telephone
-							.input-field.col.s12
-								i.material-icons.prefix mode_edit
-								textarea#icon_message.materialize-textarea
-								label(for="icon_message") Message
-							.col.s12.center-align
-								button.btn.waves-effect.waves-light(type="submit") Enviar
-									i.material-icons send
 					.row.mapa
 						.s12.col
-							#map-canvas-lima.map-canvas
+							#map-canvas-barcelona.map-canvas
+				div#lima.s12.col.contact_form
 					.row.loc
 						.m6.col.left-align
-							p Miraflores – Lima
+							p Lima – Perú
 						.m6.col.right-align
 							p
 								strong Tel: 
@@ -113,3 +77,8 @@ block content
 						.m6.col.left-align
 							p Calle Enrique Palacios, 335 oficina 501 
 						.m6.col.right-align
+					.row.mapa
+						.s12.col
+							#map-canvas-lima.map-canvas
+				div#chile.s12.col.contact_form
+					p.title.bold Próximamente
