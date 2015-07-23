@@ -12,11 +12,16 @@
 		margin-bottom: 10px;
 	}
 }
-.linke{
-	width: 50%;
-}
+
 #formMail{
 		margin-top: 30px;
+		margin-bottom: 50px;
+}
+.slider .slides li .caption{
+	left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+	padding: 0 15%;
 }
 .header-nav{
 	background: $gray_summa;
@@ -40,9 +45,9 @@
 }
 
 .slider {
-	height: calc(100vh - 116px);
+	height: calc(100vh - 160px);
 	.slides{
-		height: calc(100vh - 116px);
+		height: calc(100vh - 160px);
 	}
 	h5{
 		font-size: 1.5rem;
@@ -126,14 +131,17 @@ footer.page-footer{
 		margin: 0;
 		border-bottom: 3px solid #f3f3f3;
 		.title{
-			font-size: 2rem;
+			font-size: 1.5rem;
 			font-family: bitter;
 			color: $orange_summa;
 			cursor: pointer;
+			line-height: 1.2;
+			margin-bottom: 0;
 		}
 		.desc{
 			font-size: 1rem;
 			overflow: hidden;
+			padding-top: 10px;
 			&.service_desc{
 				display: none;
 			}
@@ -196,9 +204,7 @@ footer.page-footer{
 /*map*/
 .mapa{
 	padding-bottom: 30px;
-	border-bottom: 1px solid $middle_gray;
 	margin-bottom: 30px;
-	margin-top: 30px;
 }
 .map-canvas {
 	width: 700px;
