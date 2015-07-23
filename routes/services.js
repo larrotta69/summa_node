@@ -24,10 +24,14 @@ router.route('/')
 				response.format({
 					//Render index in services/index. Send the service variable to jade template
 					html: function(){
-						response.render('services/index', {
-							title: 'Index for services',
-							services: services
-						});
+						var obj = {};
+            if (request.user === undefined){
+              obj = { title: 'Index for services', services: services };
+            }
+            else{
+              obj = { title: 'Index for members', services: services, logueado: true };
+            }
+						response.render('services/index', obj);
 					},
 					json: function(){
 						response.json(services);

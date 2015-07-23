@@ -10,32 +10,28 @@ block content
                         div.col.s12.m6.member_image
                           img(src="/img/equipo/#{member.picture}")
                         div.col.s12.m6.image
+                          if logueado
+                            a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
+                              i.material-icons create
                             h5.member_name #{member.name}
                             p.member_title #{member.title}
                             p.member_mail #{member.mail}
-                            a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
-                              img.linke(src="/img/linkedin.svg")
+                            if member.linkedin
+                              a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
+                                img.linke(src="/img/linkedin.svg")
+                            
                       else
                         div.col.s12.m6.image
+                          if logueado
+                            a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
+                              i.material-icons create
                             h5.member_name #{member.name}
                             p.member_title #{member.title}
                             p.member_mail #{member.mail}
-                            a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
-                              img.linke(src="/img/linkedin.svg")
-                          
-                              
-              div.col.s12.m6.member
-                  div.col.s12.m6.member_image
-                      img(src="/img/equipo/cesar_prieto.jpg")
-                  div.col.s12.m6.image
-                      h5.member_name Cesar Prieto
-                      p.member_title Oficina Lima
-              div.col.s12.m6.member
-                  div.col.s12.m6.member_image
-                      img(src="/img/equipo/cesar_prieto.jpg")
-                  div.col.s12.m6.image
-                      h5.member_name Carlos Esteban Jaramillo Schloss
-                      p.member_title Consultor Oficina Bogotá
+                            if member.linkedin
+                              a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
+                                img.linke(src="/img/linkedin.svg")
+                            
               
             - each member, index in members
                 div(id="modal#{index}", class="modal modal_team")

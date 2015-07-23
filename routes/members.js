@@ -25,10 +25,16 @@ router.route('/')
 				response.format({
 					//Render index in views/members. Send the member variable to jade template
 					html: function(){
-						response.render('members/index', {
-							title: 'Index for members',
-							members: members
-						});
+            var obj = {};
+            if (request.user === undefined){
+              obj = { title: 'Index for members', members: members };
+            }
+            else{
+              obj = { title: 'Index for members', members: members, logueado: true };
+            }
+
+            response.render('members/index', obj);
+
 					},
 					json: function(){
 						response.json(members);
