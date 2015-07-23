@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Account = require('../model/account');
 var passport = require('passport');
-
+var sendgrid  = require('sendgrid')('daniel_larrotta', 'sendgrid1969');
 
 /* GET services page. */
 router.get('/', function(req, res, next) {
