@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	browserify  = require('gulp-browserify'),
 	gulpif  = require('gulp-if');
 
-var env = 'develpment';
+var env = 'develment';
 var sassDir = './public/sass/*.scss';
 var sassOut = './public/stylesheets';
 
