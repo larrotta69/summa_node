@@ -13,24 +13,6 @@ block content
 						a(href="#lima") Lima
 					li.tab.col.s3
 						a(href="#chile") Santiago de Chile
-						
-			form.col.s12#formMail(name="mailer", method="post", action="/mailer")
-				.row
-					.input-field.col.s6
-						i.material-icons.prefix account_circle
-						input#icon_prefix.validate(type="text", name="nombre")
-						label(for="icon_prefix") Nombre
-					.input-field.col.s6
-						i.material-icons.prefix mail
-						input#icon_mail.validate(type="text", name="mail")
-						label(for="icon_mail") Mail
-					.input-field.col.s12
-						i.material-icons.prefix mode_edit
-						textarea#icon_message.materialize-textarea(name="mensaje")
-						label(for="icon_message") Mensaje
-					.col.s12.center-align
-						button.btn.waves-effect.waves-light(type="submit") Enviar
-							i.material-icons send
 			.row.contact_forms
 				div#bogota.s12.col.contact_form
 					.row.loc
@@ -82,3 +64,20 @@ block content
 							#map-canvas-lima.map-canvas
 				div#chile.s12.col.contact_form
 					p.title.bold Próximamente
+			form.col.s12#formMail(name="mailer", method="post", action="/mailer")
+				.row
+					.input-field.col.s12.m6
+						i.material-icons.prefix account_circle
+						input#icon_prefix.validate(type="text", name="nombre")
+						label(for="icon_prefix") Nombre
+					.input-field.col.s12.m6
+						i.material-icons.prefix mail
+						input#icon_mail.validate(type="text", name="mail")
+						label(for="icon_mail") Mail
+					.input-field.col.s12
+						i.material-icons.prefix mode_edit
+						textarea#icon_message.materialize-textarea(name="mensaje")
+						label(for="icon_message") Mensaje
+					.col.s12.center-align
+						button.btn.waves-effect.waves-light(type="submit") Enviar
+							i.material-icons send

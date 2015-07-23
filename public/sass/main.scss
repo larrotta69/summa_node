@@ -4,26 +4,54 @@
 
 
 @media #{$small-and-down} {
-    
+	.linke{
+		width: 15%;
+	}
+	.slider, .slider .slides{
+		  height: calc(100vh - 116px);
+	}
+	.slider .slides li .caption{
+		  padding: 0 5%;
+	}
+	.tabs{
+		  white-space: normal;
+			li{
+				a{
+					line-height: 1.5;
+					padding-top: 10px;
+					font-size: 0.7rem;
+				}
+			}
+	}
 }
 @media #{$medium-and-down} {
 	.container .row{
 		margin-left: 0;
 		margin-right: 0;
 	}
+	.map-canvas{
+		width: 100%;
+
+	}
+	html, body{
+		  overflow-x: hidden;
+	}
 	@import 'components/medium/header',
 			'components/medium/services';
 
 }
 @media #{$medium-and-up} {
+	.linke{
+		width: 35%;
+	}
 
 }
 
 @media #{$large-and-up} {
+	.linke{
+		width: 25%;
+	}
 	@import 'components/large/header',
 			'components/large/main',
 			'components/medium/services';
 }
-
-
-

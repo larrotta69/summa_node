@@ -6,17 +6,24 @@ block content
             - each member, index in members
                 a(href="#modal#{index}", class="modal-trigger")
                     div.col.s12.m6.member
+                      if member.picture
                         div.col.s12.m6.member_image
-                          if member.picture
-                            img(src="/img/equipo/#{member.picture}")
-                          else
-                            img(src="/img/equipo/default.jpg")
+                          img(src="/img/equipo/#{member.picture}")
                         div.col.s12.m6.image
                             h5.member_name #{member.name}
                             p.member_title #{member.title}
                             p.member_mail #{member.mail}
                             a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
                               img.linke(src="/img/linkedin.svg")
+                      else
+                        div.col.s12.m6.image
+                            h5.member_name #{member.name}
+                            p.member_title #{member.title}
+                            p.member_mail #{member.mail}
+                            a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
+                              img.linke(src="/img/linkedin.svg")
+                          
+                              
               div.col.s12.m6.member
                   div.col.s12.m6.member_image
                       img(src="/img/equipo/cesar_prieto.jpg")
