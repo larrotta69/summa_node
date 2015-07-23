@@ -8,3 +8,4 @@ var db = mongoose.connection;
 db.once('open', function () {
 	console.log('MongoDB connection successful.'+ db);
 });
+
