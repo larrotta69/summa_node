@@ -13,29 +13,29 @@ block content
                           if logueado
                             a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
                               i.material-icons create
-                            h5.member_name #{member.name}
-                            p.member_title #{member.title}
-                            p.member_mail #{member.mail}
-                            if member.linkedin
-                              a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
-                                img.linke(src="/img/linkedin.svg")
+                          h5.member_name #{member.name}
+                          p.member_title #{member.title}
+                          p.member_mail #{member.mail}
+                          if member.linkedin
+                            a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
+                              img.linke(src="/img/linkedin.svg")
                             
                       else
                         div.col.s12.m6.image
                           if logueado
                             a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
                               i.material-icons create
-                            h5.member_name #{member.name}
-                            p.member_title #{member.title}
-                            p.member_mail #{member.mail}
-                            if member.linkedin
-                              a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
-                                img.linke(src="/img/linkedin.svg")
+                          h5.member_name #{member.name}
+                          p.member_title #{member.title}
+                          p.member_mail #{member.mail}
+                          if member.linkedin
+                            a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
+                              img.linke(src="/img/linkedin.svg")
                             
               
             - each member, index in members
                 div(id="modal#{index}", class="modal modal_team")
-                    img(class="img_modal_team", src="/img/equipo/large/#{member.picture}")
+                    //img(class="img_modal_team", src="/img/equipo/large/#{member.picture}")
                     div.modal-content
                         h4= member.name
                         p !{member.desc}
