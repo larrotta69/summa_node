@@ -68,15 +68,15 @@ block content
 				.row
 					.input-field.col.s12.m6
 						i.material-icons.prefix account_circle
-						input#icon_prefix.validate(type="text", name="nombre")
-						label(for="icon_prefix") Nombre
+						input#icon_prefix.validate(type="text", name="nombre", required="required")
+						label(for="icon_prefix", data-error="wrong" data-success="right") Nombre
 					.input-field.col.s12.m6
 						i.material-icons.prefix mail
-						input#icon_mail.validate(type="text", name="mail")
-						label(for="icon_mail") Mail
+						input#icon_mail.validate(type="email", name="mail", required="required")
+						label(for="icon_mail", data-error="wrong" data-success="right") Mail
 					.input-field.col.s12
 						i.material-icons.prefix mode_edit
-						textarea#icon_message.materialize-textarea(name="mensaje")
+						textarea#icon_message.materialize-textarea(name="mensaje", required="required")
 						label(for="icon_message") Mensaje
 					.col.s12.center-align
 						button.btn.waves-effect.waves-light(type="submit") Enviar

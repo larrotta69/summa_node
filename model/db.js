@@ -6,5 +6,5 @@ var mongoose = require('mongoose');
 mongoose.connect("mongodb://summaUserAdmin:1234567@localhost:22550/summadb");
 var db = mongoose.connection;
 db.once('open', function () {
-	console.log('MongoDB connection successful.'+ db);
+  console.log('MongoDB connection successful.'+ db);
 });
