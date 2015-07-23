@@ -9,10 +9,10 @@ block content
                       if member.picture
                         div.col.s12.m6.member_image
                           img(src="/img/equipo/#{member.picture}")
-                      div.col.s12.m6.image
-                        if logueado
-                          a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
-                            i.material-icons create
+                        div.col.s12.m6.image
+                          if logueado
+                            a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
+                              i.material-icons create
                           h5.member_name #{member.name}
                           p.member_title #{member.title}
                           p.member_mail #{member.mail}
