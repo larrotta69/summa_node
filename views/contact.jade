@@ -5,13 +5,13 @@ block content
 		article.row.contact_module
 			.col.s12
 				ul.tabs
-					li.tab.col.s3
+					li.tab.my-tab-1.col.s3
 						a(href="#bogota") Bogotá
-					li.tab.col.s3
+					li.tab.my-tab-2.col.s3
 						a(href="#barcelona") Barcelona
 					li.tab.col.s3
 						a(href="#lima") Lima
-					li.tab.col.s3
+					li.tab.my-tab-3.col.s3
 						a(href="#chile") Santiago de Chile
 			.row.contact_forms
 				div#bogota.s12.col.contact_form
@@ -31,6 +31,8 @@ block content
 					.row.mapa
 						.s12.col
 							#map-canvas-bogota.map-canvas
+								iframe(width="700", height="300", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Cl.+69a+4+31,Bogotá+Colombia&zoom=18", allowfullscreen="true")
+								
 				div#barcelona.s12.col.contact_form
 					.row.loc
 						.m6.col.left-align
@@ -48,6 +50,8 @@ block content
 					.row.mapa
 						.s12.col
 							#map-canvas-barcelona.map-canvas
+								iframe(width="700", height="300", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Lexben+Advocats,Carrer+de+Muntaner,+340&zoom=18", allowfullscreen="true")
+								
 				div#lima.s12.col.contact_form
 					.row.loc
 						.m6.col.left-align
@@ -62,6 +66,7 @@ block content
 					.row.mapa
 						.s12.col
 							#map-canvas-lima.map-canvas
+								iframe(width="700", height="300", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Calle+Enrique+Palacios+350,Miraflores+15074&zoom=18", allowfullscreen="true")
 				div#chile.s12.col.contact_form
 					p.title.bold Próximamente
 			form.col.s12#formMail(name="mailer", method="post", action="/mailer")
