@@ -83,8 +83,12 @@ block content
 						i.material-icons.prefix mode_edit
 						textarea#icon_message.materialize-textarea(name="mensaje", required="required")
 						label(for="icon_message") Mensaje
-					input(type="checkbox", required="required", id="aceptar")
-					label(for="aceptar") Aceptar Condiciones de Uso y Política de Privacidad
+					.condiciones-contacto
+						a(href="/condiciones") Condiciones de Uso y Política de Privacidad
+						br
+						br
+						input(type="checkbox", required="required", id="aceptar")
+						label(for="aceptar") Aceptar Aviso Legal
 					.col.s12.center-align
 						button.btn.waves-effect.waves-light(type="submit") Enviar
 							i.material-icons send
