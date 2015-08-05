@@ -29,9 +29,9 @@ block content
 								strong Tel: 
 								span +57 3133507816
 					.row.mapa
-						.s12.col
+						.offset-s3.s6.col.align-center
 							#map-canvas-bogota.video-container
-								iframe(width="700", height="300", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Cl.+69a+4+31,Bogotá+Colombia&zoom=18", allowfullscreen="true")
+								iframe(width="500", height="200", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Cl.+69a+4+31,Bogotá+Colombia&zoom=18", allowfullscreen="true")
 								
 				div#barcelona.s12.col.contact_form
 					.row.loc
@@ -42,15 +42,15 @@ block content
 								strong Tel: 
 								span  +34 93 531 16 16
 						.m6.col.left-align
-							p Muntaner, 340, 2º 2ª. 08021. 
+							p Muntaner, 269, 2º 1ª. 08021. 
 						.m6.col.right-align
 							p
 								strong Tel: 
 								span  +34 93 531 16 18
 					.row.mapa
-						.s12.col
+						.offset-s3.s6.col.align-center
 							#map-canvas-barcelona.video-container
-								iframe(width="700", height="300", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Lexben+Advocats,Carrer+de+Muntaner,+340&zoom=18", allowfullscreen="true")
+								iframe(width="500", height="200", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Carrer+de+Muntaner,+269&zoom=18", allowfullscreen="true")
 								
 				div#lima.s12.col.contact_form
 					.row.loc
@@ -64,11 +64,11 @@ block content
 							p Calle Enrique Palacios, 335 oficina 501 
 						.m6.col.right-align
 					.row.mapa
-						.s12.col
+						.offset-s3.s6.col.align-center
 							#map-canvas-lima.video-container
-								iframe(width="700", height="300", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Calle+Enrique+Palacios+350,Miraflores+15074&zoom=18", allowfullscreen="true")
+								iframe(width="500", height="200", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=Calle+Enrique+Palacios+350,Miraflores+15074&zoom=18", allowfullscreen="true")
 				div#chile.s12.col.contact_form
-					p.title.bold Próximamente
+					h4.title.bold Próximamente
 			form.col.s12#formMail(name="mailer", method="post", action="/mailer")
 				.row
 					.input-field.col.s12.m6
@@ -83,6 +83,8 @@ block content
 						i.material-icons.prefix mode_edit
 						textarea#icon_message.materialize-textarea(name="mensaje", required="required")
 						label(for="icon_message") Mensaje
+					input(type="checkbox", required="required", id="aceptar")
+					label(for="aceptar") Aceptar Condiciones de Uso y Política de Privacidad
 					.col.s12.center-align
 						button.btn.waves-effect.waves-light(type="submit") Enviar
 							i.material-icons send

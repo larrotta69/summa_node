@@ -8,8 +8,11 @@ block content
 			.right.actions_item
 				a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}/edit")
 					i.material-icons create
-				a.btn-floating.btn-large.waves-effect.waves-light.red
-					i.material-icons clear
+				form(action='/equipo/#{member._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+					input(type='hidden',value='DELETE',name='_method')
+					button.btn-floating.btn-large.waves-effect.waves-light.red(type='submit')
+						i.material-icons clear
+					
 			article.row.team_module
 				.col.s12.member
 					.col.s12.member_image

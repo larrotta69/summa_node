@@ -195,4 +195,30 @@ router.put('/:id/edit', function(req, res){
 		});
 	});
 });
+
+router.delete('/:id/edit', function(req, res){
+    mongoose.model('Service').findById(req.id, function(error, service){
+        if (error) {
+            return console.error(err);
+        }
+        else{
+            service.remove(function(error, service){
+                if (error)
+                    return console.error(error);
+                else{
+                    console.log('DELETE removing ID: ' + service._id);
+                    res.format({
+                        html: function(){
+                            res.redirect('/servicios');
+                        },
+                        json: function(){
+                            res.json(service);
+                        }
+                    });
+                }
+            });
+        }
+    });
+});
+
 module.exports = router;

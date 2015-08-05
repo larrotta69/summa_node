@@ -183,9 +183,9 @@ router.put('/:id/edit', function(req, res){
 	var name = req.body.name;
 	var title = req.body.title;
 	var picture = req.body.picture;
-  var mail = req.body.mail;
-  var linkedin = req.body.linkedin;
-  var desc = req.body.desc;
+    var mail = req.body.mail;
+    var linkedin = req.body.linkedin;
+    var desc = req.body.desc;
 
 	mongoose.model('Member').findById(req.id, function(error, member){
 		member.update({
@@ -210,6 +210,31 @@ router.put('/:id/edit', function(req, res){
 			}
 		});
 	});
+});
+
+router.delete('/:id/edit', function(req, res){
+    mongoose.model('Member').findById(req.id, function(error, member){
+        if (error) {
+            return console.error(err);
+        }
+        else{
+            member.remove(function(error, member){
+                if (error)
+                    return console.error(error);
+                else{
+                    console.log('DELETE removing ID: ' + member._id);
+                    res.format({
+                        html: function(){
+                            res.redirect('/equipo');
+                        },
+                        json: function(){
+                            res.json(member);
+                        }
+                    });
+                }
+            });
+        }
+    });
 });
 
 

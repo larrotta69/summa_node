@@ -7,12 +7,14 @@ var sendgrid  = require('sendgrid')('daniel_larrotta', 'sendgrid1969');
 /* GET services page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home', message: '' });
-  console.log(req.user);
+});
+
+router.get('/condiciones', function(req, res, next) {
+  res.render('condiciones', { title: 'Condiciones' });
 });
 
 router.get('/login', function(req, res, next) {
   res.render('login', {title: 'Login'});
-  console.log(req.user);
 });
 
 router.post('/login', passport.authenticate('local'), function(req, res) {

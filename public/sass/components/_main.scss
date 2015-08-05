@@ -12,7 +12,20 @@
 		margin-bottom: 10px;
 	}
 }
-
+.slider .slides li .caption .address p{
+	border-top: 1px solid white;
+    padding-top: 30px;
+    font-size: 1.4rem;
+}
+.condiciones{
+	h5.major{
+		display: inline-block;
+		color: $orange_summa;
+		+ h5{
+			margin-left: 20px;
+		}
+	}
+}
 #formMail{
 		margin-top: 30px;
 		margin-bottom: 50px;
@@ -127,11 +140,11 @@ footer.page-footer{
 /*@goup services*/
 .container{
 	.services_module{
-		padding-bottom: 30px;
+		padding-bottom: 20px;
 		margin: 0;
 		border-bottom: 3px solid #f3f3f3;
 		.title{
-			font-size: 1.5rem;
+			font-size: 1.3rem;
 			font-family: bitter;
 			color: $orange_summa;
 			cursor: pointer;
