@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .container.admin_form
+      h1.
+          #{title}
+      .row
+        .col.s12
+          form#formUpload(name="upload",method="post",action="/images", enctype="multipart/form-data")
+              h5 file:
+                  input(type="file", name="photo")
+              p.center-align
+                  button.btn.waves-effect.waves-light#btnSubmit(type="submit") Subir imagen
+                    i.material-icons send
+              br
+              br
