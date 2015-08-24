@@ -7,12 +7,20 @@ block content
       .row
         .col.s12
           form#formAddService(name="addservice",method="post",action="/servicios")
+              h5 Posición: 
+                input#inputPosition(type="text", placeholder="Agregar posición", name="position")
               h5 Título: 
                   input#inputTitle(type="text", placeholder="ex. Comercio Internacional", name="title")
               h5 Contenido:
                   input#inputContent(type="text", placeholder="ex. Prestamos apoyo", name="content")
               h5 Lista de servicios (servicio uno,servicio dos,servicio tres): 
                   input#inputServiceList(type="text", name="serviceList")
+              h5 Idioma: 
+                .input-field.col.s12
+                  select#inputIdioma(name="language")
+                    option(value="es") Español
+                    option(value="ca") Catalán
+                    option(value="en") Inglés
               p.center-align
                   button.btn.waves-effect.waves-light#btnSubmit(type="submit") Agregar servicio
                     i.material-icons send

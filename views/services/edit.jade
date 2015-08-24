@@ -7,6 +7,8 @@ block content
       .row
         .col.s12
           form#formEditService(name="editservice",method="post",action="/servicios/#{service._id}/edit",enctype='application/x-www-form-urlencoded')
+              h5 Posición: 
+                  input#inputPosition(value="#{service.position}", type="text", name="position")
               h5 Título: 
                   input#inputTitle(value="#{service.title}", type="text", name="title")
               h5 Contenido:

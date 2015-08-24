@@ -1,24 +1,29 @@
 extends layout
 
 block content
+	- var cities = ["A", "B", "C"];
+	- var citie = {"city":{"name":"barcelona", "img": "barcelona.jpg"}};
+
 	section.slider
 		ul.slides
+			- each city in cities
+				#{city}
 			li
-				img(src="img/bogota.jpg")
-				.caption.center-align
-					h5 Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.
-					.address
-						h5 Bogotá 
-						h5 Calle 69A No. 4-31
-			li
-				img(src="img/barcelona.jpg")
+				img(src="/img/barcelona.jpg")
 				.caption.center-align
 					h5 Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.
 					.address
 						h5 Barcelona 
 						h5 Muntaner, 269, 2º 1ª. 08021
 			li
-				img(src="img/lima.jpg")
+				img(src="/img/bogota.jpg")
+				.caption.center-align
+					h5 Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.
+					.address
+						h5 Bogotá 
+						h5 Calle 69A No. 4-31
+			li
+				img(src="/img/lima.jpg")
 				.caption.center-align
 					h5 Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.
 					.address

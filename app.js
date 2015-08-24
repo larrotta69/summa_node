@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var multer = require('multer');
 /*mine*/
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -68,32 +67,6 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 /*mine*/
-
-app.get('/images', function(req, res){
-  res.render('images');
-});
-
-app.post('/images', multer({ dest: './uploads/'}), function(req,res){
-	console.log(req.body); //form fields
-	/* example output:
-	{ title: 'abc' }
-	 */
-	console.log(req.files); //form files
-	/* example output:
-	{ upl:
-	   { fieldname: 'upl',
-	     originalname: 'icon-edit.png',
-	     name: 'fdc3c53f1b536d210aa534100f566bf7.png',
-	     encoding: '7bit',
-	     mimetype: 'image/png',
-	     path: 'uploads/fdc3c53f1b536d210aa534100f566bf7.png',
-	     extension: 'png',
-	     size: 1329,
-	     truncated: false,
-	     buffer: null } }
-	 */
-	res.status(204).end();
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

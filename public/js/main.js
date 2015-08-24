@@ -6,6 +6,7 @@ $( document ).ready(function(){
 		indicators: false
 	});
 	$('.modal-trigger').leanModal();
+	$('select').material_select();
 
 	$('.title_service').on('click', function(){
 		var nextDesc = $(this).next('.service_desc');

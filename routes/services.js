@@ -14,70 +14,93 @@ router.use(methodOverride(function(req, res){
       }
 }));
 
-router.route('/')
-	.get(function(request, response, next){
-		//retrieve data from mongo
-		mongoose.model('Service').find({}, function(error, services){
-			if (error)
-				return console.error(error);
-			else{
-				response.format({
-					//Render index in services/index. Send the service variable to jade template
-					html: function(){
-						var obj = {};
-            if (request.user === undefined){
-              obj = { title: 'Index for services', services: services };
-            }
-            else{
-              obj = { title: 'Index for members', services: services, logueado: true };
-            }
-						response.render('services/index', obj);
-					},
-					json: function(){
-						response.json(services);
-					}
-				});
-			}
-		});
-	})
+router.param('lang', function(req, res, next, lang) {
+    if (err) {
+        console.log(id + ' was not found');
+        res.status(404);
+        var err = new Error('Not Found');
+        err.status = 404;
+    } else {
+        console.log(lang);
+        req.lang = lang;
+        next();
+    }
+});
 
-	.post(function(req, res) {
+router.route('/:lang').get(function(request, response, next){
+    var lang = request.lang; 
+
+    mongoose.model('Service').find({language: request.lang}, function(error, services){
+        if (error)
+            return console.error(error);
+        else{
+            response.format({
+                //Render index in services/index. Send the service variable to jade template
+                html: function(){
+                    if ( lang === 'es' || lang === 'ca' || lang === 'en'){
+                        var obj = {};
+                        if (request.user === undefined){
+                          obj = { title: 'Index for services', services: services };
+                        }
+                        else{
+                          obj = { title: 'Index for members', services: services, logueado: true };
+                        }
+                        response.render('services/index', obj);
+                    }
+                    else 
+                        next();
+                },
+                json: function(){
+                    response.json(services);
+                }
+            });
+        }
+    });
+});
+	
+
+router.post('/', function(req, res) {
         // Get values from POST request. These can be done through forms or REST calls. These rely on the "name" attributes for forms
         var title = req.body.title;
         var content = req.body.content;
+        var position = req.body.position;
+        var language = req.body.language;
         var serviceList = req.body.serviceList.split(',');
 
         console.log(title, content, serviceList);
         //call the create function for our database
-				if (req.user === undefined)
-					res.sendStatus(404);
-				else {
-        	mongoose.model('Service').create({
-            title : title,
-            content : content,
-            serviceList : serviceList
-        	}, function (err, service) {
-              if (err) {
-                  res.send("There was a problem adding the service to the database.");
-              } else {
-                  //service has been created
-                  console.log('POST creating new service: ' + service);
-                  res.format({
-                      //HTML response will set the location and redirect back to the home page. You could also create a 'success' page if that's your thing
-                    html: function(){
-                        // If it worked, set the header so the address bar doesn't still say /adduser
-                        res.location("servicios");
-                        // And forward to success page
-                        res.redirect("/servicios");
-                    },
-                    //JSON response will show the newly created blob
-                    json: function(){
-                        res.json(service);
+		if (req.user === undefined)
+			res.sendStatus(404);
+		else {
+            mongoose.model('Service').create({
+                title : title,
+                content : content,
+                position : position,
+                language : language,
+                serviceList : serviceList
+                }, function (err, service) {
+                    if (err) {
+                      res.send("There was a problem adding the service to the database.");
+                    } 
+                    else {
+                      //service has been created
+                      console.log('POST creating new service: ' + service);
+                      res.format({
+                          //HTML response will set the location and redirect back to the home page. You could also create a 'success' page if that's your thing
+                        html: function(){
+                            // If it worked, set the header so the address bar doesn't still say /adduser
+                            res.location("servicios");
+                            // And forward to success page
+                            res.redirect("/servicios/es");
+                        },
+                        //JSON response will show the newly created blob
+                        json: function(){
+                            res.json(service);
+                        }
+                        });
                     }
-                });
-              }
-        })
-				}
+            })
+		}
     });
 
 /* GET New Service page. */
@@ -172,12 +195,16 @@ router.get('/:id/edit', function(req, res){
 router.put('/:id/edit', function(req, res){
 	var title = req.body.title;
 	var content = req.body.content;
+    var position = req.body.position;
+    var language = req.body.language;
 	var serviceList = req.body.serviceList.split(',');
 
 	mongoose.model('Service').findById(req.id, function(error, service){
 		service.update({
 			title: title,
 			content: content,
+            position: position,
+            language: language,
 			serviceList: serviceList
 		}, function(error, serviceID){
 			if (error)
