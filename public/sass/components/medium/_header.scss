@@ -1,10 +1,26 @@
 .container{
 	width: 100%;
-		padding: 0;
+	padding: 0;
+	margin-top: 60px;
 }
 .header-nav .logo{
 	width: 150px;
 }
 .slider .slides li .caption{
 	background-color: rgba(0,0,0,0.5);
+}
+.languages-menu{
+	top: 58px;
+	> li{
+		height: 40px;
+		a{
+			height: 40px;
+    		margin-top: -10px;
+    		i{
+    			height: 40px;
+    			position: relative;
+    			top: 15px;
+    		}
+		}
+	}
 }

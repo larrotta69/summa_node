@@ -20,8 +20,12 @@ $( document ).ready(function(){
 
 	});
 
-	switch(window.location.pathname){
-		case '/':
+	switch(window.location.pathname.split('/')[1]){
+		case '':
+		case 'es':
+		case 'en':
+		case 'ca':
+
 			$('.nav-wrapper li:nth-of-type(1) a').addClass('active');
 			if (getURLParameter('send') === 'true')
 				Materialize.toast('Tu mensaje ha sido enviado con éxito', 4000);
@@ -29,13 +33,13 @@ $( document ).ready(function(){
 				Materialize.toast('Se ha logueado con éxito', 4000);
 			break;
 
-		case '/equipo':
+		case 'equipo':
 			$('.nav-wrapper li:nth-of-type(2) a').addClass('active');
 			break;
-		case '/servicios':
+		case 'servicios':
 			$('.nav-wrapper li:nth-of-type(3) a').addClass('active');
 			break;
-		case '/contacto':
+		case 'contacto':
 			$('.nav-wrapper li:nth-of-type(4) a').addClass('active');
 			break;
 	}

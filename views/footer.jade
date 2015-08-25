@@ -1,3 +1,11 @@
+case language
+		when "en"
+			- var desc = "Privacity"
+		when "ca"
+			- var desc = "catalan Uso y Política de Privacidad"
+		default
+			- var desc = "Condiciones de Uso y Política de Privacidad"
+
 footer.page-footer.valign-wrapper
 	.footer-copyright
 		div © 2015 Copyright 
@@ -12,5 +20,5 @@ footer.page-footer.valign-wrapper
 			a(href="/contacto")
 				i.mdi-communication-email
 	div.footer-copyright.footer-cond
-		a(href="/condiciones") Condiciones de Uso y Política de Privacidad
+		a(href="/condiciones") #{desc}
 

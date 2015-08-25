@@ -8,7 +8,7 @@ block content
         .col.s12
           form#formAddMember(name="addmember",method="post",action="/equipo")
               h5 Posición: 
-                input#inputPosition(type="text", placeholder="Agregar posición", name="position")
+                input#inputPosition(type="text", placeholder="Agregar posición en la lista", name="position")
               h5 Nombre: 
                   input#inputName(type="text", placeholder="ex. John Smith", name="name")
               h5 Correo: 
@@ -21,8 +21,6 @@ block content
                   input#inputPicture(type="text", name="picture")
               h5 Descripción: 
                   input#inputDesc(type="text", name="desc")
-              h5 file:
-                  input(type="file", name="photo")
               h5 Idioma: 
                 .input-field.col.s12
                   select#inputIdioma(name="language")

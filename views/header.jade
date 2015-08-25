@@ -1,25 +1,36 @@
 case language
 		when "en"
 			- var lan = language
-			- var copy = {"inicio": "home", "equipo": "team", "servicios": "services", "contacto": "contact"}
+			- var copy = {"inicio": "home", "equipo": "team", "servicios": "services", "contacto": "contact", "lang": "Languages"}
 
 		when "ca"
 			- var lan = language
-			- var copy = {"inicio": "ca", "equipo": "cae", "servicios": "cas", "contacto": "cac"}
+			- var copy = {"inicio": "ca", "equipo": "cae", "servicios": "cas", "contacto": "cac", "lang": "Idiomas ca"}
 
 		default
 			- var lan = 'es'
-			- var copy = {"inicio": "inicio", "equipo": "equipo", "servicios": "servicios", "contacto": "contacto"}
+			- var copy = {"inicio": "inicio", "equipo": "equipo", "servicios": "servicios", "contacto": "contacto", "lang": "Idiomas"}
 
 
 header
 	nav.header-nav
+		ul#dropdown1.dropdown-content
+			li
+				a(href="es") ES
+			li.divider
+			li
+				a(href="en") EN
+			li.divider
+			li
+				a(href="ca") CA
+
+
 		.nav-wrapper
 			a(class="brand-logo right center-align", href="/")
 				img(src="/img/logo_dark_3.png", class="logo")
 			a(href="#", data-activates="mobile-demo", class="button-collapse")
 				i.mdi-navigation-menu
-			ul.hide-on-med-and-down
+			ul.hide-on-med-and-down.main-menu
 				li
 					a(href="/#{lan}") #{copy.inicio}
 				li
@@ -28,6 +39,10 @@ header
 					a(href="/servicios/#{lan}") #{copy.servicios}
 				li
 					a(href="/contacto/#{lan}") #{copy.contacto}
+			ul.right.languages-menu
+				li
+					a.dropdown-button(href="#!", data-activates="dropdown1") #{copy.lang}
+						i.material-icons.right view_module
 			ul.side-nav#mobile-demo
 				li
 					a(href="/#{lan}") #{copy.inicio}
@@ -37,12 +52,5 @@ header
 					a(href="/servicios/#{lan}") #{copy.servicios}
 				li
 					a(href="/contacto/#{lan}") #{copy.contacto}      
-	.languages
-		a(href="es")
-			span ES    
-		a(href="en")
-			span EN   
-		a(href="ca")
-			span CA
 
 

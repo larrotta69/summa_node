@@ -1,13 +1,28 @@
 extends ../layout
 
 block content
+	case language
+		when "en"
+			- var desc = "Prestamos apoyo a nuestros clientes para el correcto establecimiento y desarrollo de sus negocios en Colombia, España y Perú, valorando las diferentes alternativas que ofrece la normatividad de cada Estado, de modo que el mecanismo escogido sea idóneo para tal objetivo. "
+			- var desc2 = "Contamos con el conocimiento y la experiencia necesarias para diseñar la estrategia adecuada para los planes de expansión de las empresas, de acuerdo con las características especiales del negocio, para lo cual prestamos asesoría en las siguientes áreas del derecho:"
+			- var desc3 = "Además de las siguientes áreas del derecho, podemos ofrecer una asesoría integral a nuestros clientes a través de las alianzas con despachos expertos en otras áreas del derecho y profesionales en otras materias."
+
+		when "ca"
+			- var desc = "Prestamos apoyo a nuestros clientes para el correcto establecimiento y desarrollo de sus negocios en Colombia, España y Perú, valorando las diferentes alternativas que ofrece la normatividad de cada Estado, de modo que el mecanismo escogido sea idóneo para tal objetivo. "
+			- var desc2 = "Contamos con el conocimiento y la experiencia necesarias para diseñar la estrategia adecuada para los planes de expansión de las empresas, de acuerdo con las características especiales del negocio, para lo cual prestamos asesoría en las siguientes áreas del derecho:"
+			- var desc3 = "Además de las siguientes áreas del derecho, podemos ofrecer una asesoría integral a nuestros clientes a través de las alianzas con despachos expertos en otras áreas del derecho y profesionales en otras materias."
+
+		default
+			- var desc = "Prestamos apoyo a nuestros clientes para el correcto establecimiento y desarrollo de sus negocios en Colombia, España y Perú, valorando las diferentes alternativas que ofrece la normatividad de cada Estado, de modo que el mecanismo escogido sea idóneo para tal objetivo. "
+			- var desc2 = "Contamos con el conocimiento y la experiencia necesarias para diseñar la estrategia adecuada para los planes de expansión de las empresas, de acuerdo con las características especiales del negocio, para lo cual prestamos asesoría en las siguientes áreas del derecho:"
+			- var desc3 = "Además de las siguientes áreas del derecho, podemos ofrecer una asesoría integral a nuestros clientes a través de las alianzas con despachos expertos en otras áreas del derecho y profesionales en otras materias."
 	.back
 		section.container
 			article.row
 				div.col.s12
 					.desc.services_descr
-						p Prestamos apoyo a nuestros clientes para el correcto establecimiento y desarrollo de sus negocios en Colombia, España y Perú, valorando las diferentes alternativas que ofrece la normatividad de cada Estado, de modo que el mecanismo escogido sea idóneo para tal objetivo.  
-						p Contamos con el conocimiento y la experiencia necesarias para diseñar la estrategia adecuada para los planes de expansión de las empresas, de acuerdo con las características especiales del negocio, para lo cual prestamos asesoría en las siguientes áreas del derecho:
+						p #{desc} 
+						p #{desc2} 
 			- each service, i in services
 				article.row.services_module
 					div.col.s12
@@ -24,4 +39,4 @@ block content
 			article.row
 				div.col.s12
 					.desc.services_descr
-						p Además de las siguientes áreas del derecho, podemos ofrecer una asesoría integral a nuestros clientes a través de las alianzas con despachos expertos en otras áreas del derecho y profesionales en otras materias.
+						p #{desc3} 

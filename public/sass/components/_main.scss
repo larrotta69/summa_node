@@ -1,3 +1,41 @@
+.languages-menu{
+	position: absolute;
+    right: 0;
+    top: 100px;
+    z-index: 999;
+    text-align: center;
+    > li{
+    	&:before{
+			position: absolute;
+			background-color: rgba(0,0,0,0.1);
+			content: '';
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			filter: blur(2px);
+    		-webkit-filter: blur(2px);
+    		z-index: -99;
+    	}
+    }
+    a{
+    	color: $gray_summa !important;
+    	text-transform: capitalize !important;
+    	font-size: 0.8rem !important;
+    	z-index: 99;
+    }
+    i{
+    	color: $gray_summa;
+    	margin: 0 auto;
+    	margin-left: 10px;
+    }
+}
+.dropdown-content{
+	a{
+		color: $orange_summa;
+	}
+}
+
 #message{
 	display: none;
 }
