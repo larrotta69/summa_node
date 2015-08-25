@@ -29,7 +29,7 @@ block content
 						if logueado
 							a.btn-floating.btn-large.waves-effect.waves-light.red(href="/servicios/#{service._id}")
 								i.material-icons create
-						h2.title.bold.title_service #{service.title} - #{service.language} 
+						h2.title.bold.title_service #{service.title}
 						.desc.service_desc !{service.content}
 							ul.list_services 
 								if service.serviceList.length > 1
