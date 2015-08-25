@@ -58,8 +58,7 @@ router.route('/:lang').get(function(request, response, next){
             }
         };
 
-    //mongoose.model('Service').find({language: request.lang}).sort('position').exec(ServiceCallback);  
-    mongoose.model('Service').find({}).sort('position').exec(ServiceCallback);  
+    mongoose.model('Service').find({language: request.lang}).sort('position').exec(ServiceCallback);  
 
     
 });

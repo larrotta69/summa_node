@@ -58,8 +58,7 @@ router = express.Router(),
 				});
 			}
 		};
-    //mongoose.model('Member').find({language: request.lang}).sort('position').exec(MemberCallback);  
-    mongoose.model('Member').find({}).sort('position').exec(MemberCallback);  
+    mongoose.model('Member').find({language: request.lang}).sort('position').exec(MemberCallback);  
 
 });
 
