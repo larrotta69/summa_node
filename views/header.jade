@@ -1,3 +1,17 @@
+case language
+		when "en"
+			- var lan = language
+			- var copy = {"inicio": "home", "equipo": "team", "servicios": "services", "contacto": "contact"}
+
+		when "ca"
+			- var lan = language
+			- var copy = {"inicio": "ca", "equipo": "cae", "servicios": "cas", "contacto": "cac"}
+
+		default
+			- var lan = 'es'
+			- var copy = {"inicio": "inicio", "equipo": "equipo", "servicios": "servicios", "contacto": "contacto"}
+
+
 header
 	nav.header-nav
 		.nav-wrapper
@@ -7,19 +21,28 @@ header
 				i.mdi-navigation-menu
 			ul.hide-on-med-and-down
 				li
-					a(href="/") inicio
+					a(href="/#{lan}") #{copy.inicio}
 				li
-					a(href="/equipo") equipo
+					a(href="/equipo/#{lan}") #{copy.equipo}
 				li
-					a(href="/servicios") servicios
+					a(href="/servicios/#{lan}") #{copy.servicios}
 				li
-					a(href="/contacto") contacto
+					a(href="/contacto/#{lan}") #{copy.contacto}
 			ul.side-nav#mobile-demo
 				li
-					a(href="/") inicio
+					a(href="/#{lan}") #{copy.inicio}
 				li
-					a(href="/equipo") equipo
+					a(href="/equipo/#{lan}") #{copy.equipo}
 				li
-					a(href="/servicios") servicios
+					a(href="/servicios/#{lan}") #{copy.servicios}
 				li
-					a(href="/contacto") contacto        
+					a(href="/contacto/#{lan}") #{copy.contacto}      
+	.languages
+		a(href="es")
+			span ES    
+		a(href="en")
+			span EN   
+		a(href="ca")
+			span CA
+
+

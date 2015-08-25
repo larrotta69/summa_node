@@ -40,11 +40,16 @@ router.param('lang', function(req, res, next, lang) {
 });
 router.route('/:lang').get(function(req, res, next){
     var lang = req.lang; 
-    
-    if ( lang === 'es' || lang === 'ca' || lang === 'en')
-        res.render('index', { title: 'Home', message: lang });
+    if (lang != ' ')
+      if ( lang === 'es' || lang === 'ca' || lang === 'en')
+          res.render('index', { title: 'Home', language: lang });
+      else
+          next();
     else
-        next();
+      console.log(id + ' was not found');
+      res.status(404);
+      var err = new Error('Not Found');
+      err.status = 404;
 
 });
 

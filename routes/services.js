@@ -30,32 +30,36 @@ router.param('lang', function(req, res, next, lang) {
 router.route('/:lang').get(function(request, response, next){
     var lang = request.lang; 
 
-    mongoose.model('Service').find({language: request.lang}, function(error, services){
-        if (error)
-            return console.error(error);
-        else{
-            response.format({
-                //Render index in services/index. Send the service variable to jade template
-                html: function(){
-                    if ( lang === 'es' || lang === 'ca' || lang === 'en'){
-                        var obj = {};
-                        if (request.user === undefined){
-                          obj = { title: 'Index for services', services: services };
+
+        var ServiceCallback = function(error, services){
+            if (error)
+                return console.error(error);
+            else{
+                response.format({
+                    //Render index in services/index. Send the service variable to jade template
+                    html: function(){
+                        if ( lang === 'es' || lang === 'ca' || lang === 'en'){
+                            var obj = {};
+                            if (request.user === undefined){
+                              obj = { title: 'Index for services', services: services, language: lang };
+                            }
+                            else{
+                              obj = { title: 'Index for members', services: services, language: lang, logueado: true };
+                            }
+                            response.render('services/index', obj);
                         }
-                        else{
-                          obj = { title: 'Index for members', services: services, logueado: true };
-                        }
-                        response.render('services/index', obj);
+                        else 
+                            next();
+                    },
+                    json: function(){
+                        response.json(services);
                     }
-                    else 
-                        next();
-                },
-                json: function(){
-                    response.json(services);
-                }
-            });
-        }
-    });
+                });
+            }
+        };
+
+    mongoose.model('Service').find({language: request.lang}).sort('position').exec(ServiceCallback);  
+    
 });
 	
 

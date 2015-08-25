@@ -1,6 +1,7 @@
 extends ../layout
 
 block content
+  - var lan = service.language
     .container.admin_form
       h1.
           #{title}
@@ -15,6 +16,21 @@ block content
                   input#inputContent(value="#{service.content}", type="text", name="content")
               h5 Lista de servicios (servicio uno,servicio dos,servicio tres): 
                   input#inputServiceList(value="#{service.serviceList}", type="text", name="serviceList")
+              h5 Idioma: 
+                .input-field.col.s12
+                  select#inputIdioma(name="language")
+                    if (lan == 'es')
+                      option(value="es", selected="selected") Español
+                      option(value="ca") Catalán
+                      option(value="en") Inglés
+                    else if (lan == 'ca')
+                      option(value="es") Español
+                      option(value="ca", selected="selected") Catalán
+                      option(value="en") Inglés
+                    else
+                      option(value="es") Español
+                      option(value="ca") Catalán
+                      option(value="en", selected="selected") Inglés
               p
                 input(type='hidden',value='PUT',name='_method')
               p.center-align

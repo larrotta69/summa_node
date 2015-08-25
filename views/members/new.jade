@@ -7,6 +7,8 @@ block content
       .row
         .col.s12
           form#formAddMember(name="addmember",method="post",action="/equipo")
+              h5 Posición: 
+                input#inputPosition(type="text", placeholder="Agregar posición", name="position")
               h5 Nombre: 
                   input#inputName(type="text", placeholder="ex. John Smith", name="name")
               h5 Correo: 
@@ -21,6 +23,12 @@ block content
                   input#inputDesc(type="text", name="desc")
               h5 file:
                   input(type="file", name="photo")
+              h5 Idioma: 
+                .input-field.col.s12
+                  select#inputIdioma(name="language")
+                    option(value="es") Español
+                    option(value="ca") Catalán
+                    option(value="en") Inglés
               p.center-align
                   button.btn.waves-effect.waves-light#btnSubmit(type="submit") Agregar miembro a equipo
                     i.material-icons send
