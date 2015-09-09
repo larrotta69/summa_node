@@ -29,6 +29,12 @@
     	margin: 0 auto;
     	margin-left: 10px;
     }
+	img.language-flag{
+		width: 30px;
+		margin-left: 20px;
+		position: relative;
+		top: 5px;
+	}
 }
 .dropdown-content{
 	a{
@@ -56,9 +62,9 @@
     margin-top: 20px;
 	h5{
 		margin-top: 0;
-    	font-size: 1.8rem;	
+    	font-size: 1.8rem;
 	}
-} 
+}
 .condiciones{
 	h5.major{
 		display: inline-block;
@@ -68,7 +74,7 @@
 		}
 	}
 }
-.desc.services_descr{ 
+.desc.services_descr{
 	p{
 		font-size: 1.3rem;
 	}
@@ -145,6 +151,7 @@ footer.page-footer{
 	-webkit-justify-content: flex-end;
 	-ms-justify-content: flex-end;
   	padding: 10px 0;
+	position: relative;
   	.footer-copyright{
   		position: absolute;
   		left: 20px;
@@ -152,6 +159,7 @@ footer.page-footer{
   	.footer-cond{
   		position: absolute;
   		right: 60px;
+		left: inherit;
   		left: initial;
   	}
 	.social-foot{
@@ -259,13 +267,14 @@ footer.page-footer{
 }
 .btn{
 	padding: 12px 2rem;
-	line-height: 1;
-	vertical-align: top;
+	line-height: 1.5;
+	height: 50px;
 	background-color: $orange_summa;
 	.material-icons{
 		margin-left: 20px;
 		position: relative;
-		top: -3px;
+		top: -2px;
+		vertical-align: middle;
 	}
 	&:hover{
 		background-color: $orange_dark_summa;
