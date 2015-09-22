@@ -5,7 +5,7 @@ case language
 
 		when "ca"
 			- var lan = language
-			- var copy = {"inicio": "INICI", "equipo": "EQUIP", "servicios": "SERVEIS", "contacto": "contacto", "lang": "Idiomas ca"}
+			- var copy = {"inicio": "INICI", "equipo": "EQUIP", "servicios": "SERVEIS", "contacto": "CONTACTE", "lang": "Idiomas ca"}
 
 		default
 			- var lan = 'es'
@@ -14,17 +14,15 @@ case language
 
 header
 	nav.header-nav
-		ul#dropdown1.dropdown-content
+		ul.languages-content
 			li
-				a(href="es") ES
+				a(href="es")
 					img.language-flag(src="/img/flag_es.jpg", alt="")
-			li.divider
 			li
-				a(href="en") EN
+				a(href="en")
 					img.language-flag(src="/img/flag_en.jpg", alt="")
-			li.divider
 			li
-				a(href="ca") CA
+				a(href="ca")
 					img.language-flag(src="/img/flag_ca.png", alt="")
 				
 		.nav-wrapper
@@ -41,10 +39,6 @@ header
 					a(href="/servicios/#{lan}") #{copy.servicios}
 				li
 					a(href="/contacto/#{lan}") #{copy.contacto}
-			ul.right.languages-menu
-				li
-					a.dropdown-button(href="#!", data-activates="dropdown1") #{copy.lang}
-						i.material-icons.right view_module
 			ul.side-nav#mobile-demo
 				li
 					a(href="/#{lan}") #{copy.inicio}

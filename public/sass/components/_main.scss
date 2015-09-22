@@ -305,3 +305,22 @@ footer.page-footer{
 		}
 	}
 }
+
+.languages-content{
+	position: absolute;
+	right: 0;
+	top: 90px;
+	z-index: 99;
+	li{
+		a{
+			padding: 0 5px;
+		}
+
+		&:hover{
+			background: none;
+		}
+	}
+	.language-flag{
+		width: 30px;
+	}
+}
