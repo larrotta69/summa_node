@@ -1,81 +1,81 @@
 extends layout
 
 block content
+	case language
+		when "en"
+			- var desc = "EN Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.";
+			- var copy = "Coming soon";
+			- var form = {"nombre": "Name", "mail": "Mail", "mensaje":"Mensaje", "condiciones": "Condiciones de Uso y Política de Privacidad", "aviso": "Aceptar Aviso Legal", "cta": "Send"};
+		
+		when "ca"
+			- var desc = "CA Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.";
+			- var copy = "Coming soon catalan";
+			- var form = {"nombre": "Name ca", "mail": "Mail ca", "mensaje":"Mensaje", "condiciones": "Condiciones de Uso y Política de Privacidad", "aviso": "Aceptar Aviso Legal", "cta": "Send catalan"};
+			
+		default
+			- var desc = "ES Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.";
+			- var copy = "Próximamente";
+			- var form = {"nombre": "Nombre", "mail": "Correo", "mensaje":"Mensaje", "condiciones": "Condiciones de Uso y Política de Privacidad", "aviso": "Aceptar Aviso Legal", "cta": "Enviar"};
+
+	
+	- var cities = [{"link": "barcelona", "name":"Barcelona", "country":"España", "tel":"+34 93 531 16 16", "tel2":"+34 93 531 16 18", "address": "Muntaner, 269, 2º 1ª. 08021", "map": "Carrer+de+Muntaner,+269"}, {"link": "bogota", "name":"Bogotá", "country":"Colombia", "tel":"+57 (1) 3462668", "tel2":"+57 3133507816", "address": "Calle 69A No. 4-31", "map": "Cl.+69a+4+31,Bogotá+Colombia"}, {"link": "lima", "name":"Lima", "country":"Perú", "tel":"+ 51 (1) 959171049", "tel2":"", "address": "Calle Enrique Palacios, 335 oficina 501", "map": "Calle+Enrique+Palacios+350,Miraflores+15074"}];
+
+	
 	section.container
 		article.row.contact_module
-			.col.s6
+			.col.s12
 				ul.tabs
-					li.tab.col.s3
-						a(href="#bogota") Bogotá
-					li.tab.col.s3
-						a(href="#barcelona") Barcelona
-			.row.contact_forms
-				div#bogota.s12.col.contact_form
-					form#formMail(name="mailer", method="post", action="/mailer")
-						.row
-							.input-field.col.s6
-								i.material-icons.prefix account_circle
-								input#icon_prefix.validate(type="text", name="nombre")
-								label(for="icon_prefix") Name
-							.input-field.col.s6
-								i.material-icons.prefix phone
-								input#icon_telephone.validate(type="text", name="telefono")
-								label(for="icon_telephone") Telephone
-							.input-field.col.s12
-								i.material-icons.prefix mode_edit
-								textarea#icon_message.materialize-textarea(name="mensaje")
-								label(for="icon_message") Message
-							.col.s12.center-align
-								button.btn.waves-effect.waves-light(type="submit") Enviar
-									i.material-icons send
-					.row.mapa
-						.s12.col
-							#map-canvas-bogota.map-canvas
-					.row.loc
-						.m6.col.left-align
-							p Localización de la oficina
-						.m6.col.right-align
-							p
-								strong Tel: 
-								span (916) 256 21 55
-						.m6.col.left-align
-							p Dirección de la oficina
-						.m6.col.right-align
-							p
-								strong Fax: 
-								span (916) 256 21 55
+					- each city, i in cities
+						li.tab.my-tab-2.col.s3
+							a(href="##{city.link}") #{city.name}
+					li.tab.my-tab-3.col.s3
+						a(href="#chile") Santiago de Chile
 
-				div#barcelona.s12.col.contact_form
-					form
-						.row
-							.input-field.col.s6
-								i.material-icons.prefix account_circle
-								input#icon_prefix.validate(type="text")
-								label(for="icon_prefix") Name
-							.input-field.col.s6
-								i.material-icons.prefix phone
-								input#icon_telephone.validate(type="text")
-								label(for="icon_telephone") Telephone
-							.input-field.col.s12
-								i.material-icons.prefix mode_edit
-								textarea#icon_message.materialize-textarea
-								label(for="icon_message") Message
-							.col.s12.center-align
-								button.btn.waves-effect.waves-light(type="submit") Enviar
-									i.material-icons send
-					.row.mapa
-						.s12.col
-							#map-canvas-barcelona.map-canvas
-					.row.loc
-						.m6.col.left-align
-							p Localización de la oficina
-						.m6.col.right-align
-							p
-								strong Tel: 
-								span (916) 265 12 65
-						.m6.col.left-align
-							p Dirección de la oficina
-						.m6.col.right-align
-							p
-								strong Fax: 
-								span (916) 256 12 67
+			.row.contact_forms
+				- each city, i in cities
+					div(id="#{city.link}").s12.col.contact_form
+						.row.loc
+							.m6.col.left-align
+								p #{city.name} - #{city.country}
+							.m6.col.right-align
+								p
+									strong Tel: 
+									span #{city.tel}
+							.m6.col.left-align
+								p #{city.address}
+							if (city.tel2)
+								.m6.col.right-align
+									p
+										strong Tel: 
+										span #{city.tel2}
+						.row.mapa
+							.offset-s3.s6.col.align-center
+								#map-canvas-bogota.video-container
+									iframe(width="500", height="200", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCyvxwyNtx1e-p8N0vz_QwNRtXjwcSbOUk&q=#{city.map}&zoom=18", allowfullscreen="true")
+								
+				div#chile.s12.col.contact_form
+					h4.title.bold #{copy}
+			
+			form.col.s12#formMail(name="mailer", method="post", action="/mailer")
+				.row
+					.input-field.col.s12.m6
+						i.material-icons.prefix account_circle
+						input#icon_prefix.validate(type="text", name="nombre", required="required")
+						label(for="icon_prefix", data-error="wrong" data-success="right") #{form.nombre}
+					.input-field.col.s12.m6
+						i.material-icons.prefix mail
+						input#icon_mail.validate(type="email", name="mail", required="required")
+						label(for="icon_mail", data-error="wrong" data-success="right") #{form.mail}
+					.input-field.col.s12
+						i.material-icons.prefix mode_edit
+						textarea#icon_message.materialize-textarea(name="mensaje", required="required")
+						label(for="icon_message") #{form.mensaje}
+					.condiciones-contacto
+						a(href="/condiciones") #{form.condiciones}
+						br
+						br
+						input(type="checkbox", required="required", id="aceptar")
+						label(for="aceptar") #{form.aviso}
+					.col.s12.center-align
+						button.btn.waves-effect.waves-light(type="submit") #{form.cta}
+							i.material-icons send

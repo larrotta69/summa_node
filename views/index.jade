@@ -1,15 +1,24 @@
 extends layout
 
 block content
+
+	- var cities = [{"img": "barcelona.jpg", "name":"Barcelona", "address": "Muntaner, 269, 2º 1ª. 08021"}, {"img": "bogota.jpg", "name":"Bogotá", "address": "Calle 69A No. 4-31"}, {"img": "lima.jpg", "name":"Lima", "address": "Calle Enrique Palacios, 335 oficina 501"}];
+
+	case language
+		when "en"
+			- var desc = "Summa Consultants is an international firm based in Barcelona, Bogota and Lima, and allies in other cities, providing legal advice to individuals and companies specializing both in its expansion process, as in their daily activities";
+		when "ca"
+			- var desc = "Summa Consultors és un despatx internacional amb seu a Barcelona, Bogotà i Lima, així com col·laboradors en altres ciutats, que presta assessoria jurídica especialitzada a persones i empreses tant en els seus processos d’expansió, com la seva activitat quotidiana.";
+		default
+			- var desc = "Summa Consultores Jurídicos es una firma internacional con sede en Barcelona, Bogotá y Lima, y aliados en otras ciudades, que presta asesoría jurídica especializada a personas y empresas tanto en sus procesos de expansión, como en su actividad cotidiana.";
+		
 	section.slider
 		ul.slides
-			li
-				img(src="img/bogota.jpg")
-				.caption.center-align
-					h5 Lorem Ipsum es simplemente el texto de rellen, o de las imprentas y archivos de texto, Lorem Ipsum es simplemente el texto de relleno.
-					h3.bold LOREM IPSUM
-			li
-				img(src="img/barcelona.jpg")
-				.caption.center-align
-					h5 Lorem Ipsum es simplemente el texto de rellen, o de las imprentas y archivos de texto, Lorem Ipsum es simplemente el texto de relleno.
-					h3.bold LOREM IPSUM
+			- each city, i in cities
+				li
+					img(src="/img/#{city.img}")
+					.caption.center-align
+						h5 #{desc}
+						.address
+							h5 #{city.name} 
+							h5 #{city.address}

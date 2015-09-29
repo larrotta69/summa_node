@@ -58,6 +58,7 @@ app.use('/login', routes);
 app.use('/equipo', members);
 app.use('/servicios', services);
 app.use('/contacto', contact);
+
 /*mine*/
 
 /*mine*/

@@ -1,16 +1,34 @@
 extends ../layout
 
 block content
-    h1.
-        #{title}
-    form#formAddMember(name="addmember",method="post",action="/equipo")
-        p Name: 
-            input#inputName(type="text", placeholder="ex. John Smith", name="name")
-        p title:
-            input#inputTitle(type="text", placeholder="ex. CEO", name="title")
-        p picture: 
-            input#inputPicture(type="text", name="picture")
-        p desc: 
-            input#inputDesc(type="text", name="desc")
-        p
-            button#btnSubmit(type="submit") submit
+    .container.admin_form
+      h1.
+          #{title}
+      .row
+        .col.s12
+          form#formAddMember(name="addmember",method="post",action="/equipo")
+              h5 Posición: 
+                input#inputPosition(type="text", placeholder="Agregar posición en la lista", name="position")
+              h5 Nombre: 
+                  input#inputName(type="text", placeholder="ex. John Smith", name="name")
+              h5 Correo: 
+                  input#inputMail(type="text", placeholder="ex. xx@summa-consultores.com", name="mail")
+              h5 LinkedIn: 
+                  input#inputLinked(type="text", placeholder="ex. John Smith", name="linkedin")
+              h5 Título:
+                  input#inputTitle(type="text", placeholder="ex. CEO", name="title")
+              h5 Foto: 
+                  input#inputPicture(type="text", name="picture")
+              h5 Descripción: 
+                  input#inputDesc(type="text", name="desc")
+              h5 Idioma: 
+                .input-field.col.s12
+                  select#inputIdioma(name="language")
+                    option(value="es") Español
+                    option(value="ca") Catalán
+                    option(value="en") Inglés
+              p.center-align
+                  button.btn.waves-effect.waves-light#btnSubmit(type="submit") Agregar miembro a equipo
+                    i.material-icons send
+              br
+              br

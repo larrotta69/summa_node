@@ -3,5 +3,4 @@
 node_modules/
 lib/
 model/db.js
-
-
+npm-debug.log

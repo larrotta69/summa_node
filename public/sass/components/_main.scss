@@ -1,8 +1,96 @@
+.languages-menu{
+	position: absolute;
+    right: 0;
+    top: 100px;
+    z-index: 999;
+    text-align: center;
+    > li{
+    	&:before{
+			position: absolute;
+			background-color: rgba(0,0,0,0.1);
+			content: '';
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			filter: blur(2px);
+    		-webkit-filter: blur(2px);
+    		z-index: -99;
+    	}
+    }
+    a{
+    	color: $gray_summa !important;
+    	text-transform: capitalize !important;
+    	font-size: 0.8rem !important;
+    	z-index: 99;
+    }
+    i{
+    	color: $gray_summa;
+    	margin: 0 auto;
+    	margin-left: 10px;
+    }
+	img.language-flag{
+		width: 30px;
+		margin-left: 20px;
+		position: relative;
+		top: 5px;
+	}
+}
+.dropdown-content{
+	a{
+		color: $orange_summa;
+	}
+}
+
 #message{
 	display: none;
 }
 .toast{
 	background-color: $orange_summa;
+}
+.content_list{
+	padding-left: 20px;
+	list-style: disc;
+	li{
+		list-style: disc;
+		margin-bottom: 10px;
+	}
+}
+.slider .slides li .caption .address{
+	border-top: 1px solid white;
+	padding-top: 30px;
+    margin-top: 20px;
+	h5{
+		margin-top: 0;
+    	font-size: 1.8rem;
+	}
+}
+.condiciones{
+	h5.major{
+		display: inline-block;
+		color: $orange_summa;
+		+ h5{
+			margin-left: 20px;
+		}
+	}
+}
+.desc.services_descr{
+	p{
+		font-size: 1.3rem;
+	}
+}
+.condiciones-contacto{
+	margin-left: 40px;
+}
+#formMail{
+		margin-top: 30px;
+		margin-bottom: 50px;
+}
+.slider .slides li .caption{
+	left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+	padding: 0 15%;
 }
 .header-nav{
 	background: $gray_summa;
@@ -26,9 +114,9 @@
 }
 
 .slider {
-	height: calc(100vh - 116px);
+	height: calc(100vh - 160px);
 	.slides{
-		height: calc(100vh - 116px);
+		height: calc(100vh - 160px);
 	}
 	h5{
 		font-size: 1.5rem;
@@ -63,9 +151,16 @@ footer.page-footer{
 	-webkit-justify-content: flex-end;
 	-ms-justify-content: flex-end;
   	padding: 10px 0;
+	position: relative;
   	.footer-copyright{
   		position: absolute;
   		left: 20px;
+  	}
+  	.footer-cond{
+  		position: absolute;
+  		right: 60px;
+		left: inherit;
+  		left: initial;
   	}
 	.social-foot{
 		.icon-foot{
@@ -85,9 +180,17 @@ footer.page-footer{
 			}
 			&.facebook{
 				background: #3c5999;
+				img{
+					margin-top: -4px;
+					width: 70%;
+				}
 			}
 			&.twitter{
-				background: #00adef;
+				background: white;
+				img{
+					width: 26px;
+					margin-top: 1px;
+				}
 			}
 			&.mail{
 				background: #999999;
@@ -100,16 +203,27 @@ footer.page-footer{
 /*@goup services*/
 .container{
 	.services_module{
-		padding-bottom: 30px;
+		padding-bottom: 20px;
 		margin: 0;
 		border-bottom: 3px solid #f3f3f3;
 		.title{
-			font-size: 2rem;
+			font-size: 1.3rem;
 			font-family: bitter;
 			color: $orange_summa;
+			cursor: pointer;
+			line-height: 1.2;
+			margin-bottom: 0;
 		}
 		.desc{
 			font-size: 1rem;
+			overflow: hidden;
+			padding-top: 10px;
+			&.service_desc{
+				display: none;
+			}
+			p{
+				font-size: 1.3rem;
+			}
 		}
 		.list_services{
 			li{
@@ -153,13 +267,14 @@ footer.page-footer{
 }
 .btn{
 	padding: 12px 2rem;
-	line-height: 1;
-	vertical-align: top;
+	line-height: 1.5;
+	height: 50px;
 	background-color: $orange_summa;
 	.material-icons{
 		margin-left: 20px;
 		position: relative;
-		top: -3px;
+		top: -2px;
+		vertical-align: middle;
 	}
 	&:hover{
 		background-color: $orange_dark_summa;
@@ -169,9 +284,7 @@ footer.page-footer{
 /*map*/
 .mapa{
 	padding-bottom: 30px;
-	border-bottom: 1px solid $middle_gray;
 	margin-bottom: 30px;
-	margin-top: 30px;
 }
 .map-canvas {
 	width: 700px;
@@ -181,5 +294,33 @@ footer.page-footer{
 .loc{
 	p{
 		margin-top: 0;
+	}
+}
+/*admin section*/
+.edit_item{
+	.actions_item{
+		margin-top: 40px;
+		a{
+			margin: 0 10px;
+		}
+	}
+}
+
+.languages-content{
+	position: absolute;
+	right: 0;
+	top: 90px;
+	z-index: 99;
+	li{
+		a{
+			padding: 0 5px;
+		}
+
+		&:hover{
+			background: none;
+		}
+	}
+	.language-flag{
+		width: 30px;
 	}
 }

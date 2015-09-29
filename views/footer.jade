@@ -1,13 +1,24 @@
+case language
+		when "en"
+			- var desc = "Privacity"
+		when "ca"
+			- var desc = "catalan Uso y Política de Privacidad"
+		default
+			- var desc = "Condiciones de Uso y Política de Privacidad"
+
 footer.page-footer.valign-wrapper
 	.footer-copyright
-		div © 2015 Copyright
+		div © 2015 Copyright 
 	.social-foot.valign
-		.icon-foot.facebook
-			a(href="")
-				i.mdi-communication-email
-		.icon-foot.twitter
-			a(href="")
-				i.mdi-communication-email
+		//.icon-foot.facebook
+		//	a(href="")
+		//		img(src="/img/facebook.png")
+		//.icon-foot.twitter
+		//	a(href="")
+		//		img(src="/img/twitter.png")
 		.icon-foot.mail
-			a(href="")
+			a(href="/contacto")
 				i.mdi-communication-email
+	div.footer-copyright.footer-cond
+		a(href="/condiciones") #{desc}
+

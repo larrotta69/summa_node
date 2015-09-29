@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	browserify  = require('gulp-browserify'),
 	gulpif  = require('gulp-if');
 
-var env = 'development';
+var env = 'develment';
 var sassDir = './public/sass/*.scss';
 var sassOut = './public/stylesheets';
 
@@ -25,7 +25,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('template', function(){
-    
+
 });
 
 gulp.task('todo', function(){

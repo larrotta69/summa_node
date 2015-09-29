@@ -6,14 +6,36 @@ block content
             - each member, index in members
                 a(href="#modal#{index}", class="modal-trigger")
                     div.col.s12.m6.member
+                      if member.picture
                         div.col.s12.m6.member_image
-                            img(src="/img/#{member.picture}")
+                          img(src="/img/equipo/#{member.picture}")
                         div.col.s12.m6.image
-                            h5.member_name #{member.name}
-                            p.member_title #{member.title}
+                          if logueado
+                            a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
+                              i.material-icons create
+                          h5.member_name #{member.name}
+                          p.member_title #{member.title}
+                          p.member_mail #{member.mail}
+                          if member.linkedin
+                            a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
+                              img.linke(src="/img/linkedin.svg")
+                            
+                      else
+                        div.col.s12.m6.image
+                          if logueado
+                            a.btn-floating.btn-large.waves-effect.waves-light.red(href="/equipo/#{member._id}")
+                              i.material-icons create
+                          h5.member_name #{member.name}
+                          p.member_title #{member.title}
+                          p.member_mail #{member.mail}
+                          if member.linkedin
+                            a(href="#{member.linkedin}", alt="LinkedIn", target="_blank")
+                              img.linke(src="/img/linkedin.svg")
+                            
+              
             - each member, index in members
                 div(id="modal#{index}", class="modal modal_team")
-                    img(class="img_modal_team", src="/img/large/#{member.picture}")
+                    //img(class="img_modal_team", src="/img/equipo/large/#{member.picture}")
                     div.modal-content
                         h4= member.name
-                        p= member.desc
+                        p !{member.desc}

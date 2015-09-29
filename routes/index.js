@@ -6,16 +6,15 @@ var sendgrid  = require('sendgrid')('daniel_larrotta', 'sendgrid1969');
 
 /* GET services page. */
 router.get('/', function(req, res, next) {
-<<<<<<< HEAD
-  res.render('index', { title: 'Summa App' });
-=======
-  res.render('index', { title: 'Home', message: '' });
-  console.log(req.user);
+  res.render('index', { title: 'Home', message: 'de' });
+});
+
+router.get('/condiciones', function(req, res, next) {
+  res.render('condiciones', { title: 'Condiciones' });
 });
 
 router.get('/login', function(req, res, next) {
   res.render('login', {title: 'Login'});
-  console.log(req.user);
 });
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
@@ -27,23 +26,50 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+router.param('lang', function(req, res, next, lang) {
+    if (err) {
+        console.log(id + ' was not found');
+        res.status(404);
+        var err = new Error('Not Found');
+        err.status = 404;
+    } else {
+        console.log(lang);
+        req.lang = lang;
+        next();
+    }
+});
+router.route('/:lang').get(function(req, res, next){
+    var lang = req.lang; 
+    if (lang != ' ')
+      if ( lang === 'es' || lang === 'ca' || lang === 'en')
+          res.render('index', { title: 'Home', language: lang });
+      else
+          next();
+    else
+      console.log(id + ' was not found');
+      res.status(404);
+      var err = new Error('Not Found');
+      err.status = 404;
+
+});
+
 router.post('/mailer', function(req, res){
   var nombre = req.body.nombre,
-      telefono = req.body.telefono,
-      mensaje = req.body.mensaje;
+  mail = req.body.mail,
+  mensaje = req.body.mensaje;
 
   sendgrid.send({
-    to:       'larrotta69@gmail.com',
-    from:     'larrotta69@gmail.com',
+    to:       ['aprim@summa-consultores.com', 'ejaramillo@summa-consultores.com', 'larrotta69@gmail.com'],
+    from:     'ejaramillo@summa-consultores.com',
     subject:  'Correo de summa-consultores',
-    html:     '<h1>Correo </h1><br><p>Nombre: </p>'+nombre+'<br><p>Teléfono: </p>'+telefono+'<br><p>Mensaje: </p>'+mensaje
-  }, function(err, json) {
+    html:     '<h1>Correo </h1><br><p>Nombre: </p>'+nombre+'<br><p>Correo: </p>'+mail+'<br><p>Mensaje: </p>'+mensaje
+}, function(err, json) {
     if (err) { return console.error(err); }
     console.log(json);
     res.redirect('/?send=true');
-  });
 });
-
+});
+/*
 router.get('/register', function(req, res) {
   res.render('register', { });
 });
@@ -59,6 +85,6 @@ router.post('/register', function(req, res) {
   });
 >>>>>>> 63e153f81af7f0c12b2d8844701dc87a7ae9caa3
 });
-
+*/
 module.exports = router;
 

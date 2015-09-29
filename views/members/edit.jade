@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+  - var lan = member.language
+    .container.admin_form
+      h1.
+          #{title}
+      .row
+        .col.s12
+          form#formEditMember(name="editmember",method="post",action="/equipo/#{member._id}/edit",enctype='application/x-www-form-urlencoded')
+              h5 Posición: 
+                input#inputPosition(type="text", value="#{member.position}", name="position")
+              h5 Nombre: 
+                  input#inputName(value="#{member.name}", type="text", name="name")
+              h5 Correo: 
+                  input#inputMail(value="#{member.mail}", type="text", name="mail")
+              h5 LinkedIn: 
+                  input#inputLinked(value="#{member.linkedin}", type="text", name="linkedin")
+              h5 Título:
+                  input#inputTitle(value="#{member.title}", type="text", name="title")
+              h5 Foto: 
+                  input#inputPicture(value="#{member.picture}", type="text", name="picture")
+              h5 Descripción: 
+                  input#inputDesc(value="#{member.desc}", type="text", name="desc")
+              h5 Idioma: 
+                .input-field.col.s12
+                  select#inputIdioma(name="language")
+                    if (lan == 'es')
+                      option(value="es", selected="selected") Español
+                      option(value="ca") Catalán
+                      option(value="en") Inglés
+                    else if (lan == 'ca')
+                      option(value="es") Español
+                      option(value="ca", selected="selected") Catalán
+                      option(value="en") Inglés
+                    else
+                      option(value="es") Español
+                      option(value="ca") Catalán
+                      option(value="en", selected="selected") Inglés
+              p
+                input(type='hidden',value='PUT',name='_method')
+              p.center-align
+                  button.btn.waves-effect.waves-light#btnSubmit(type="submit") Editar miembro del equipo
+                    i.material-icons send
+              br
+              br

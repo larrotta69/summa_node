@@ -1,12 +1,16 @@
 extends layout
 
 block content
-    h1.
-        #{title}
-    form#formLogin(name="login",method="post",action="/login")
-        p Nombre:
-            input#inputLogin(type="text", placeholder="user", name="username")
-        p Password:
-            input#inputPass(type="password", placeholder="pass", name="password")
-        p
-            button#btnSubmit(type="submit") submit
+    .container
+      h1.
+          #{title}
+      .row
+        .col.s12
+          form#formLogin(name="login",method="post",action="/login")
+            h5 Nombre:
+                input#inputLogin(type="text", placeholder="user", name="username")
+            h5 Password:
+                input#inputPass(type="password", placeholder="pass", name="password")
+            p.center-align
+                button.btn.waves-effect.waves-light#btnSubmit(type="submit") Entrar
+                  i.material-icons send
