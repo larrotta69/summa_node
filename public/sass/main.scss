@@ -30,6 +30,10 @@
 				}
 			}
 	}
+	.languages-content .language-flag{
+		width: 20px;
+		margin-right: 3px;
+	}
 }
 @media #{$medium-and-down} {
 	.container .row{

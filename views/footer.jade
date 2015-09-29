@@ -1,9 +1,19 @@
 case language
 		when "en"
+<<<<<<< HEAD
 			- var desc = "Privacity"
 		when "ca"
 			- var desc = "catalan Uso y Política de Privacidad"
 		default
+=======
+			- var lan = language
+			- var desc = "Privacity"
+		when "ca"
+			- var lan = language
+			- var desc = "catalan Uso y Política de Privacidad"
+		default
+			- var lan = 'es'
+>>>>>>> ca8d4fb7722189faeb0949f8e6627f94f6b3fac8
 			- var desc = "Condiciones de Uso y Política de Privacidad"
 
 footer.page-footer.valign-wrapper
@@ -17,8 +27,15 @@ footer.page-footer.valign-wrapper
 		//	a(href="")
 		//		img(src="/img/twitter.png")
 		.icon-foot.mail
+<<<<<<< HEAD
 			a(href="/contacto")
 				i.mdi-communication-email
 	div.footer-copyright.footer-cond
 		a(href="/condiciones") #{desc}
 
+=======
+			a(href="/contacto/#{lan}")
+				i.mdi-communication-email
+	div.footer-copyright.footer-cond
+		a(href="/condiciones") #{desc}
+>>>>>>> ca8d4fb7722189faeb0949f8e6627f94f6b3fac8
