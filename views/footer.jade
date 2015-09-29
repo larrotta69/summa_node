@@ -1,9 +1,12 @@
 case language
 		when "en"
+			- var lan = language
 			- var desc = "Privacity"
 		when "ca"
+			- var lan = language
 			- var desc = "catalan Uso y Política de Privacidad"
 		default
+			- var lan = 'es'
 			- var desc = "Condiciones de Uso y Política de Privacidad"
 
 footer.page-footer.valign-wrapper
@@ -17,8 +20,7 @@ footer.page-footer.valign-wrapper
 		//	a(href="")
 		//		img(src="/img/twitter.png")
 		.icon-foot.mail
-			a(href="/contacto")
+			a(href="/contacto/#{lan}")
 				i.mdi-communication-email
 	div.footer-copyright.footer-cond
 		a(href="/condiciones") #{desc}
-
